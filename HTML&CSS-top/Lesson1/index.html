@@ -67,48 +67,65 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> HTMLってなに？</a></li>
+            <li><a href="#scroll-contents3"> HTMLの基本構造</a></li>
+            <li><a href="#scroll-contents4"> 見出しと段落を書いてみよう</a></li>
+            <li><a href="#scroll-contents5"> 実際に書いてみよう！</a></li>
+            <li><a href="#scroll-contents6"> 練習課題</a></li>
+            <li><a href="#scroll-contents7"> まとめ</a></li>
+            <li><a href="#scroll-contents8"> 次回予告</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        インターネットで見られるWebページって、そもそもどうやってできているのでしょう？<br>
+                        実はその土台となっているのが「HTML（エイチティーエムエル）」という言語です。<br>
+                        このレッスンでは、HTMLの基本構造と、最初に覚えるべき見出しや段落の使い方を学びます。<br>
+                        これができるようになると、あなたも「自分でページが書けた！」という第一歩を踏み出せます。<br>
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents2">HTMLってなに？</li>
+                <div class="contents-exam">
+                    <p>
+                        HTMLは、HyperText Markup Language（ハイパーテキスト・マークアップ・ランゲージ）の略で、<br>
+                        Webページの**構造（骨組み）**を記述するための言語です。<br>
+                        ページの見た目を整えるCSSとは違い、HTMLは「この部分は見出し」「ここは段落」「ここに画像を表示する」といった内容の役割を記述します。<br>
                     </p>
                     <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents3">HTMLの基本構造</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        まずは最もシンプルなHTML文書の基本構造を見てみましょう。<br>
                     </p>
-                    <!---->
-                </div>
-            <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
-                <div class="contents-exam">
-                    <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
-                    </p>
-                    <!---->
+                    <div class="flex">
+                        <div class="code-block">
+<!-- 詰めないとtab分だけ幅が広がる -->
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;はじめてのページ&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;こんにちは！&lt;/h1&gt;
+        &lt;p&gt;これが最初の文章です。&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+                        </div>
+                        <div class="result-block">
+                            <img src="./1.png" class="win-trim">
+                        </div>
+                    </div>
                 </div>
         </ol>
         <br>
@@ -122,8 +139,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>

@@ -284,4 +284,24 @@ footer {
 }
 
 
+.code-block {
+  background-color: #eef8f3; /* Qiita風のやや緑 */
+  border: 1px solid #c7e6d4;
+  border-radius: 4px;
+  padding: 0;
+  margin: 10px 0;
+  overflow: auto;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  display: flex;
+}
 
+.code-block pre {
+  margin: 0;
+  display: flex;
+}
+.win-trim {
+  width: 50%;
+}
