@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        jQuary トップページ
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>        <!--ヘッダーの部分-->
+    <div class="header-container">
+        <div class="header-left">
+            <img class="logo" src="img/Luke.jpg">
+            <p>東の HTML & CSS, jQuery 学習日誌</p>
+        </div>
+        <div class="header-right">
+            <div class="tab-top">
+                <span><a href="./index.html" id="menu">トップメニュー</a></span>
+                
+                <ul class="none-top">
+                    <li><a href="./HTML&CSS-top/index.html">HTML & CSS TOP</a></li>
+                    <li><a href="./jQuery-top/index.html">jQuery TOP</a></li>
+                </ul>
+            </div>
+            <div class="tab-html-css">
+                <span><a href="./HTML&CSS-top/index.html" id="html-css">HTML & CSS</a></span>
+                
+                <ul class="none-html-css">
+                    <li><a href="./HTML&CSS-top/Lesson1/index.html">Lesson 1：HTMLの超基本</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson2/index.html">Lesson 2：リンクと画像の使い方</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson3/index.html">Lesson 3：CSSの基本と文字装飾</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson4/index.html">Lesson 4：ボックスとレイアウトの基礎</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson5/index.html">Lesson 5：ページ構成の設計</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson6/index.html">Lesson 6：Flexboxで要素を並べる</a></li>
+                    <li><a href="./HTML&CSS-top/Lesson7/index.html">Lesson 7：シンプルなWebページを作ってみよう</a></li>
+                </ul>
+            </div>
+        
+            <div class="tab-jQuery">
+                <span><a href="./jQuery-top/index.html" id="jQuery">jQuary</a></span>
+                
+                <ul class="none-jQuery">
+                    <li><a href="./jQuery-top/Lesson1/index.html">Lesson 1：jQueryって何？導入と基本文法</a></li>
+                    <li><a href="./jQuery-top/Lesson2/index.html">Lesson 2：イベント操作を使ってみよう</a></li>
+                    <li><a href="./jQuery-top/Lesson3/index.html">Lesson 3：要素の操作（表示/非表示・クラス切り替え）</a></li>
+                    <li><a href="./jQuery-top/Lesson4/index.html">Lesson 4：アニメーションを加えてみよう</a></li>
+                    <li><a href="./jQuery-top/Lesson5/index.html">Lesson 5：簡単なjQueryアプリを作ってみよう</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<main>           <!--メインの部分-->
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>東のHTML & CSS, jQuery学習日誌</h1>
+        <h2>トップメニュー</h2>
+        <p>
+            本HPのトップメニューです。<br>
+            ここから各言語のページに移動できます。
+        </p>
+        <h5>背景素材：windows</h5>
+      </div>
+    </div>
+    <div class="main-wrapper">
+        <ul id="box" class="contents container">
+            <h2>各ページトップ↓</h2>
+            <li>
+                <a href="./HTML&CSS-top/index.html"> HTML&CSS </a> <br>
+                ウェブサイトをかたち作るHTMLとCSSの学習です
+            </li>
+            <li>
+                <a href="./jQuery-top/index.html"> jQuery</a> <br>
+                動きやアニメーションをつけ、Webサイトを彩ります
+            </li>
+        </ul>
+
+        <br>
+<!--
+        <ol class="explanation">
+            <li id="scroll-contents1">目次を追加(1)</li>
+                <div class="contents-exam">
+                    <p>
+                        1つ目の段落です
+                        pタグで文章を挿入したり、
+                        <span>spanで赤くしてみたり</span>
+                        いろいろ試せます
+                        imgで写真を挿入できたりもします。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents2">目次を追加(2)</li>
+                <div class="contents-exam">
+                    <p>
+                        2つ目の段落です
+                        pタグで文章を挿入したり、
+                        <span>spanで赤くしてみたり</span>
+                        いろいろ試せます
+                        imgで写真を挿入できたりもします。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents3">目次を追加(3)</li>
+                <div class="contents-exam">
+                    <p>
+                        3つ目の段落です
+                        pタグで文章を挿入したり、
+                        <span>spanで赤くしてみたり</span>
+                        いろいろ試せます
+                        imgで写真を挿入できたりもします。
+                    </p>
+                </div>
+        </ol>
+        <br>
+
+        <div class="flex">
+            <p id="Go-back" class="Go-button"><a href="#">前に戻る</a></p>
+            <p id="Go-forward" class="Go-button"><a href="#">次へ進む</a></p>
+        </div>
+-->
+    </div>
+
+    <div class="message-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>さぁ、あなたもjQueryを始めてみましょう！</h2>
+          <h3>Let's learn to jQuery, learn to be creative!</h3>
+        </div>
+        <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
+      </div>
+    </div>
+
+
+</main>
+
+<p id="scrollTop"><a href="#">Return to Top</a></p>
+
+<footer>        <!--フッターの部分-->
+    <div class="container">
+        <img src="img/Luke.jpg">
+        <p>実家の父が飼っている犬。父がスターウォーズ好きのためそこから拝借して名前はルーク。</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

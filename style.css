@@ -1,0 +1,287 @@
+header {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.7);
+    /* ヘッダーを固定する */
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header-left {
+  float: left;
+  height: 50px;
+  display: flex;
+  margin-right: 5px;
+}
+
+.logo {
+  height:100%;
+  align-items: center;
+}
+
+.header-left p {
+    text-align: center;
+    margin-left: 20px;
+    color:aliceblue;
+}
+
+.header-right {
+  float: right;
+
+  transition: all 0.5s;
+  display: flex;
+  margin: 0 10px 0px 10px;
+}
+
+.header-right a {
+  line-height: 50px;
+  padding: 0 25px;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+
+.header-right ul  {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.header-tab {
+    background-color: rgba(34, 49, 52, 0.5);
+    margin: 0 1px;
+}
+
+.tab-top,
+.tab-html-css,
+.tab-jQuery {
+  position: relative; /* サブメニューの基準にする */
+}
+
+.none-top,
+.none-html-css,
+.none-jQuery {
+  position: absolute;
+  top: 100%; /* 親の下に表示 */
+  right: 0;
+  width: max-content; /* 内容に合わせる（必要に応じて固定幅も可） */
+  background-color: rgba(255, 255, 255, 0.95);
+  display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 5;
+  padding: 0;
+  margin: 0;
+}
+.none-top li,
+.none-html-css li,
+.none-jQuery li {
+  white-space: nowrap; /* 長い文字列でも折り返さず横幅維持 */
+}
+
+.none-top li a,
+.none-html-css li a,
+.none-jQuery li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.none-top li a:hover,
+.none-html-css li a:hover,
+.none-jQuery li a:hover {
+  background-color: #eee;
+}
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url("img/img14.png");
+  background-size: 100% 100%;
+  color: white;
+}
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+  color:purple;
+  text-align: left;
+}
+
+.top-wrapper h2 {
+  opacity: 0.7;
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  color: purple;
+  text-align: left;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+  color: purple;
+}
+
+.top-wrapper h5 {
+    color: black;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+.main-wrapper {
+  height: auto;
+  padding: 20px 5%;
+  background-color: #f7f7f7;
+  border: 1px solid black;
+/*  text-align: center; */
+}
+.main-wrapper h2 {
+  text-align: center;
+}
+
+#box {
+  width: 50%;
+  margin: 0 auto;
+  color: #668ad8;
+  border: double 5px #668ad8;/*二重線 太さ 色*/
+  background: #f1f8ff; 
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+#box li {
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-bottom: 5%;
+  
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+.contents {
+  width: 80%;
+  padding: 20px;
+  
+  border: 1px solid gray;
+  background-color: rgb(210, 232, 247);
+  box-sizing: border-box;
+}
+.contents h2{
+  padding: 0;
+  margin: 2%;
+}
+.explanation {
+  margin-left: 0; /* ← 左の余白をなくす */
+  padding-left: 0; /* ← 念のためリストの番号余白もなくす */
+  list-style-position: inside; /* 番号をテキストと同じラインに */
+  /*
+  margin: 0 auto;
+  */
+  border: double 5px #668ad8;/*二重線 太さ 色*/
+  background: #f1f8ff; 
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.explanation li {
+  margin: 20px 5%; /* ← 縦に余白、横幅を本文と合わせる */
+  font-size: 2em;
+}
+#scroll-contents1,#scroll-contents2,#scroll-contents3 {
+  border-left: 5px solid #0a2bfd;
+  background: #5ef2ff;
+}
+.contents-exam {
+  text-align: left;
+  padding: 0 5%;
+}
+.contents-exam span {
+  font-size: 1.5em;
+  color: red;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.Go-button {
+    background-color: #5ef2ff;
+    border: 1px solid #0028f1;
+    border-radius: 20px;
+    padding: 10px;
+
+}
+
+
+.message-wrapper {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.message {
+  padding: 15px 40px;
+  background-color: #5dca88;
+  box-shadow: 0 7px #1a7940;
+  margin-bottom: 4%;
+}
+.message:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+.heading {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: #5f5d60;
+}
+
+.heading h2 {
+  font-weight: normal;
+}
+.heading h3 {
+  font-weight: normal;
+}
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+.btn:hover {
+  opacity: 1;
+}
+
+#scrollTop {
+    background-color: #0028f1;
+    border: 1px solid #0028f1;
+    border-radius: 20px;
+    padding: 10px;
+    position: fixed;
+    bottom: 25px;
+    right:25px;
+    opacity: 75%;
+}
+
+#scrollTop a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+
+footer img {
+  height: 50px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  padding-top: 1%;
+}
+
+
+
