@@ -7,6 +7,8 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -67,48 +69,192 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> リンク（aタグ）の基本</a></li>
+            <li><a href="#scroll-contents3"> 画像（imgタグ）の基本</a></li>
+            <li><a href="#scroll-contents4"> 練習：自己紹介ページをグレードアップ</a></li>
+            <li><a href="#scroll-contents5"> 練習課題</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        前回は、HTMLの基本構造と「見出し」「段落」など、文字中心の内容を学びました。<br>
+                        今回は、**Webページの魅力をグッと高める要素「リンク」と「画像」**について学びます。<br>
+                        これができるようになると、他のページへ移動できたり、画像付きの自己紹介なども書けるようになります。<br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">リンク（aタグ）の基本</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        リンクを貼るには<span>&lt;a&gt;</span>タグを使います。<br>
+                        「anchor（アンカー）」の略で、リンクの出発点を意味します。<br>
+                        具体的な書き方は以下の通りです。<br>
+                        <br>
                     </p>
-                    <!---->
+                    <div class="FLEX">
+                        <div class="code-block">
+<!-- 詰めないとtab分だけ幅が広がる -->
+<pre><code>
+    &lt;a href="https://www.google.com"&gt;Googleを開く&lt;/a&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./1.png" class="win-trim">
+                        </div>
+                    </div>
+                    <p>
+                        各行の内容について簡単に解説を加えます。<br>
+                    </p>
+                    <table class="test-table">
+                        <caption></caption>
+                        <tr>
+                            <th>    <pre><code>href</code></pre>   </th>   <th>    ：href属性にリンク先のURLを記述する   </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>&lt;a&gt;～&lt;/a&gt;</code></pre> </th>   <th>    ：囲んだ部分がクリック可能なリンクになる    </th>
+                        </tr>
+                    </table>
+                    <br>
+                    <h3>コラム：リンクを新しいタブで開くには？</h3>
+                    <p>リンク先を新しいタブで開くには<span>&lt;target="_blank"&gt;</span>を追加します。</p>
+                    <div class="code-block">
+<pre><code>
+    &lt;a href="https://www.google.com" target="_blank"&gt;Google（新しいタブで開く）&lt;/a&gt;
+</code></pre>
+                    </div>
+                    <br>
+
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">画像（imgタグ）の基本</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        画像を表示するには、<img>タグを使います。<br>
+                        こちらは閉じタグが不要な「空要素」と呼ばれるタグです。<br>
                     </p>
-                    <!---->
+                    <div class="flex">
+                        <div class="code-block">
+<pre><code>
+    &lt;img src="sample.jpg" alt="サンプル画像"&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./2.png" class="win-trim">
+                        </div>
+                        <div class="result-block">
+                            <img src="./3.png" class="win-trim">
+                        </div>
+                    </div>
+                    
+                    <p>
+                        うまく読み込むと画像が表示されます（真ん中） うまく読み込めないとalt属性の内容が表示されます（右）<br>
+                        <br>
+                        <br>
+                        タグ内の属性について簡単に解説を加えます。<br>
+                    </p>
+                    <table class="test-table">
+                        <caption></caption>
+                        <tr>
+                            <th>    <pre><code>src属性</code></pre> </th>   <th>    ：画像ファイルの場所（sourceの略）   </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>alt属性</code></pre> </th>   <th>    ：画像が表示されなかったときや、読み上げソフト用のテキスト（アクセシビリティ対応）    </th>
+                        </tr>
+                    </table>
+                    <p>
+                        実際のHTML例は以下の通りです。
+                    </p>
+                    <br>
+                    <h3>実際のHTML例</h3>
+                    <div class="FLEX">
+                        <div class="code-block">
+<pre><code>
+    &lt;h1&gt;私のペット紹介&lt;/h1&gt;
+    &lt;p&gt;うちのネコはとってもかわいいです。&lt;/p&gt;
+    &lt;img src="cat.jpg" alt="うちのネコの写真"&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./4.png" class="win-trim">
+                        </div>
+                        <p>猫画像素材：<a href="https://www.pakutaso.com" title="フリー素材「ぱくたそ」" >フリー素材「ぱくたそ」 </a></p>
+                    </div>
+                    <br>
+                    <p>次はLesson1の自己紹介をグレードアップしましょう！</p>
+                </div>
+            <br>
+            <li id="scroll-contents4">練習：自己紹介ページをグレードアップ</li>
+                <div class="contents-exam">
+                    <p>
+                        Lesson1で作った自己紹介ページに、画像とリンクを追加してみましょう！
+                    </p>
+                    <h3>サンプルHTML↓</h3>
+                    <div class="FLEX">
+                        <div class="code-block">
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;自己紹介&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;こんにちは！&lt;/h1&gt;
+        &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+        
+        &lt;h2&gt;趣味&lt;/h2&gt;
+        &lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
+        &lt;img src="dog.jpg" alt="犬の写真" width="300"&gt;
+
+        &lt;h2&gt;作ったサイト&lt;/h2&gt;
+        &lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./5.png" class="win-trim">
+                        </div>
+                    </div>
+                    <h3>便利知識：画像の幅と高さ</h3>
+                    <p>
+                        画像サイズを指定したい場合は、<span>width</span>や<span>height</span>属性を使います。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents5">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                       以下の項目を取り入れて、<span>あなただけの自己紹介ページ</span>を作ってみましょう<br>
+                    </p>
+                    <ul>
+                        <li>画像を1枚表示（例：旅行、ペット、風景など）</li>
+                        <li>好きなサイトへ飛べるリンクを1つ入れる</li>
+                        <li>リンクは新しいタブで開くようにする</li>
+                    </ul>
+                </div>
+            <br>
+            <li id="scroll-contents6">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li><span>&lt;a href="URL"&gt;リンクテキスト&lt;/a&gt;</span>でリンクが作れる</li>
+                        <li><span>&lt;img src="画像のURL" alt="説明"&gt;</span>で画像を表示できる</li>
+                        <li><span>target="_blank"</span>でリンク先を新しいタブに表示できる</li>
+                        <li><span>width</span>や<span>height</span>で画像サイズの調整も可能！</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページではhtmlで作成した<span>文字に色</span>を付けたり、<span>大きく</span>したり、<span>Webページの見た目をデザインするCSSの基礎</span>を学びます！
+                    </p>
                 </div>
         </ol>
         <br>
@@ -122,8 +268,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>

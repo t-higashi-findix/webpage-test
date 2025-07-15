@@ -7,6 +7,8 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -63,52 +65,204 @@
         <h5>背景画像  著作者：rawpixel.com/出典：Freepik</h5>
       </div>
     </div>
-    <div class="main-wrapper">
+;    <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> CSSってなに？</a></li>
+            <li><a href="#scroll-contents3"> CSSの書き方（基本構文）</a></li>
+            <li><a href="#scroll-contents4"> CSSの適用方法</a></li>
+            <li><a href="#scroll-contents5"> 文字を装飾してみよう</a></li>
+            <li><a href="#scroll-contents6"> 実例：簡単なデザイン付き自己紹介ページ</a></li>
+            <li><a href="#scroll-contents7"> 練習課題</a></li>
+            <li><a href="#scroll-contents8"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        HTMLでWebページの「構造」が書けるようになったら、次に学ぶべきはCSS（シーエスエス）。<br>
+                        CSSは、文字の色や大きさ、背景などを設定できる「Webページのデザイン担当」です。<br>
+                        このレッスンでは、CSSの基本的な使い方と、文字にスタイルを加える方法を学びます。<br>
+                        ほんの少しCSSを加えるだけで、ページの印象が大きく変わりますよ <br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">CSSってなに？</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        CSSは **Cascading Style Sheets（カスケーディング・スタイル・シート）**の略で、HTMLで作った構造に対して「見た目の指示」を与える言語です。<br>
+                        例えば、文字の色やサイズ、フォント、行間、背景などを変えることができます。<br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">CSSの書き方（基本構文）</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        CSSは<span>○○.css</span>というファイル形式です。<br>
+                        また、実際のCSSファイルの書き方は以下の構文を基本として作られています。<br>
                     </p>
-                    <!---->
+                    <br>
+                    <div class="flex">
+                        <div class="code-block">
+<pre><code>
+    セレクタ {
+        プロパティ: 値;
+    }
+</code></pre>
+                        </div>
+                        <div class="code-block">
+<pre><code>
+    h1 {
+        color: red;
+        font-size: 32px;
+    }
+</code></pre>
+                        </div>
+                    </div>
+
+                    <p>
+                        左が基本構文です。<span>セレクタ</span>とはどのHTMLの要素にCSSを適用するか決める部分です。<br>
+                        右側はCSSの書き方の一例です。 この例では読込先の.htmlファイルの<span>h1</span>セレクタに対して、<br>
+                        <span>color</span>を<span>red</span>に（文字の色を赤に）、<span>font-size</span>を<span>32px</span>（フォントサイズを32ピクセル）に設定するものとなっています。<br>
+                        <span>h1</span>、つまり見出しを装飾しているという事です。
+                    </p>
                 </div>
+            <br>
+            <li id="scroll-contents4">CSSの適用方法</li>
+                <div class="contents-exam">
+                    <p>
+                        CSSは3つの方法でHTMLに適用できます。
+                        <ul>
+                            <li>HTMLファイルとは別にCSSファイルをつくり、HTML文書内にそのファイルをCSSとして利用することを記す<br>（外部スタイルシート）。</li>
+                            <li>HTML文書のhead要素内にstyle要素を設け、HTML文書内にCSSを埋め込む<br>（内部スタイルシート）。</li>
+                            <li>HTMLの各要素にstyle属性を用いて直接記入する。</li>
+                        </ul>
+                        <br>
+                        引用：<a href="https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html" target="_blank">「HTML+CSSまとめページ/CSSの適用方法」(https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html)</a>
+                        <br>
+                        <br>
+                        <br>
+                        この記事は外部スタイルシートを使ってCSSファイルを読み込むことでhtmlファイルを装飾しています。
+                    </p>
+                    <h3>サンプルHTML↓</h3>
+                    <div class="FLEX">
+                        <div class="code-block">
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;自己紹介&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;こんにちは！&lt;/h1&gt;
+        &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+        
+        &lt;h2&gt;趣味&lt;/h2&gt;
+        &lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
+        &lt;img src="dog.jpg" alt="犬の写真" width="300"&gt;
+
+        &lt;h2&gt;作ったサイト&lt;/h2&gt;
+        &lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./5.png" class="win-trim">
+                        </div>
+                    </div>
+                    <h3>便利知識：画像の幅と高さ</h3>
+                    <p>
+                        画像サイズを指定したい場合は、<span>width</span>や<span>height</span>属性を使います。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents5">文字を装飾してみよう</li>
+                <div class="contents-exam">
+                    <p>
+                       よく使うCSSのプロパティをいくつかご紹介します↓
+                    </p>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr>
+                            <th>    プロパティ   </th>   <th>   説明    </th>   <th>    例  </th>
+                        </tr>
+                        </div>
+                        <tr>
+                            <th>    <span>color</span>   </th>   <th>   文字の色を指定    </th>   <th>    <span>coler: blue;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-size</span>   </th>   <th>   文字の大きさを指定    </th>   <th>    <span>font-size: 24px;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-family</span>   </th>   <th>   フォントの種類を指定    </th>   <th>    <span>font-family: sans-serif;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-weight</span>   </th>   <th>   太字などの強調（boldなど）    </th>   <th>    <span>font-weight: bold;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>text-align</span>   </th>   <th>   文字の配置（left,centerなど）    </th>   <th>    <span>text-align: center;</span>  </th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            <br>
+
+            <li id="scroll-contents6">実例：簡単なデザイン付き自己紹介ページ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li><span>&lt;a href="URL"&gt;リンクテキスト&lt;/a&gt;</span>でリンクが作れる</li>
+                        <li><span>&lt;img src="画像のURL" alt="説明"&gt;</span>で画像を表示できる</li>
+                        <li><span>target="_blank"</span>でリンク先を新しいタブに表示できる</li>
+                        <li><span>width</span>や<span>height</span>で画像サイズの調整も可能！</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページではhtmlで作成した<span>文字に色</span>を付けたり、<span>大きく</span>したり、<span>Webページの見た目をデザインするCSSの基礎</span>を学びます！
+                    </p>
+                </div>
+            <br>
+
+            <li id="scroll-contents7">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                       以下の項目を取り入れて、<span>あなただけの自己紹介ページ（CSS適用版）</span>を作ってみましょう<br>
+                    </p>
+                    <ul>
+                        <li>背景色を変える</li>
+                        <li>見出しの色・サイズ・位置を変更</li>
+                        <li>段落にフォントや太さを指定</li>
+                        <li>クラス名を使ってスタイルを個別に適用</li>
+                    </ul>
+                </div>
+            <br>
+
+            <li id="scroll-contents8">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li>CSSは「Webページのデザイン担当」</li>
+                        <li><span>セレクタ { プロパティ: 値; }</span>でスタイルを指定する</li>
+                        <li>色・サイズ・配置・フォントなどで文字の印象が変わる</li>
+                        <li>外部CSSファイルを使うと管理がしやすくなる</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページでは、「どこに何を置く？」を決めるために欠かせない<span>ボックスモデル</span>と<span>レイアウトの仕組み</span>について学んでいきます
+                    </p>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
@@ -121,8 +275,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
