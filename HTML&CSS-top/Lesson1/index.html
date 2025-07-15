@@ -74,7 +74,6 @@
             <li><a href="#scroll-contents5"> 実際に書いてみよう！</a></li>
             <li><a href="#scroll-contents6"> 練習課題</a></li>
             <li><a href="#scroll-contents7"> まとめ</a></li>
-            <li><a href="#scroll-contents8"> 次回予告</a></li>
         </ol>
 
         <br>
@@ -84,7 +83,7 @@
                 <div class="contents-exam">
                     <p>
                         インターネットで見られるWebページって、そもそもどうやってできているのでしょう？<br>
-                        実はその土台となっているのが「HTML（エイチティーエムエル）」という言語です。<br>
+                        実はその土台となっているのが「<span>HTML</span>（エイチティーエムエル）」という言語です。<br>
                         このレッスンでは、HTMLの基本構造と、最初に覚えるべき見出しや段落の使い方を学びます。<br>
                         これができるようになると、あなたも「自分でページが書けた！」という第一歩を踏み出せます。<br>
                     </p>
@@ -93,7 +92,7 @@
             <li id="scroll-contents2">HTMLってなに？</li>
                 <div class="contents-exam">
                     <p>
-                        HTMLは、HyperText Markup Language（ハイパーテキスト・マークアップ・ランゲージ）の略で、<br>
+                        HTMLは、<span>HyperText Markup Language</span>（ハイパーテキスト・マークアップ・ランゲージ）の略で、<br>
                         Webページの**構造（骨組み）**を記述するための言語です。<br>
                         ページの見た目を整えるCSSとは違い、HTMLは「この部分は見出し」「ここは段落」「ここに画像を表示する」といった内容の役割を記述します。<br>
                     </p>
@@ -104,8 +103,10 @@
                 <div class="contents-exam">
                     <p>
                         まずは最もシンプルなHTML文書の基本構造を見てみましょう。<br>
+                        左が実際のhtmlのプログラムで、右が実行結果です<br>
+                        <br>
                     </p>
-                    <div class="flex">
+                    <div class="FLEX">
                         <div class="code-block">
 <!-- 詰めないとtab分だけ幅が広がる -->
 <pre><code>
@@ -126,7 +127,130 @@
                             <img src="./1.png" class="win-trim">
                         </div>
                     </div>
+                    <p>
+                        これだけではわかりませんね。<br>
+                        各行の内容について簡単に解説を加えます。<br>
+                    </p>
+                    <table class="test-table">
+                        <caption></caption>
+                        <tr>
+                            <th>    <pre><code>&lt;!DOCTYPE html&gt;</code></pre>   </th>   <th>    ：HTML5を使うよ、という宣言（おまじない）   </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>&lt;html&gt;～&lt;/html&gt;</code></pre> </th>   <th>    ：HTML文書全体を囲むタグ    </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>&lt;head&gt;～&lt;/head&gt;</code></pre> </th>   <th>    ：ページの設定やタイトルを記述  </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>&lt;title&gt;～&lt;/title&gt;</code></pre>   </th>   <th>    ：タブに表示されるページのタイトル  </th>
+                        </tr>
+                        <tr>
+                            <th>    <pre><code>&lt;body&gt;～&lt;/body&gt;</code></pre> </th>   <th>    ：実際に画面に表示される部分    </th>
+                        </tr>
+                    </table>
+                    <p>
+                        htmlでは＜～＞と＜／～＞の"タグ"という部分に囲まれたもので作られています。<br>
+                        タグを使うことでページを領域ごとに分割しているイメージです<br>
+                    </p>
                 </div>
+            <br>
+            <li id="scroll-contents4">見出しと段落を書いてみよう</li>
+            <div class="contents-exam">
+                <h3>見出しタグ</h3>
+                    <p>
+                        HTMLでは、見出しを以下のように表現します。数字が小さいほど大きな見出しです。<br>
+                        左が実際のhtmlのプログラムで、右が実行結果です<br>
+                        <br>
+                    </p>
+                    <div class="FLEX">
+                        <div class="code-block">
+<!-- 詰めないとtab分だけ幅が広がる -->
+<pre><code>
+    &lt;h1&gt;大見出し&lt;/h1&gt;
+    &lt;h2&gt;中見出し&lt;/h2&gt;
+    &lt;h3&gt;小見出し&lt;/h3&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./2.png" class="win-trim">
+                        </div>
+                    </div>
+                    <p>
+                        HTMLでは上記のような見出しタグを使ってHPの見出しを作ります。<br>
+                        <br>
+                        次は段落タグです。<br>
+                        <h3>段落タグ</h3>
+                        HTMLでは段落を以下のように表現します。<br>
+                        本文となる文章によく使われます。<br>
+                    </p>
+                    <div class="FLEX">
+                        <div class="code-block">
+<!-- 詰めないとtab分だけ幅が広がる -->
+<pre><code>
+    &lt;p&gt;これは段落です。何かを説明したりする文章に使われます。&lt;/p&gt;
+</code></pre>
+                        </div>
+                        <div class="result-block">
+                            <img src="./3.png" class="win-trim">
+                        </div>
+                    </div>
+            </div>
+            <br>
+            <li id="scroll-contents5">実際に書いてみよう！</li>
+            <div class="contents-exam">
+                <p>以下のコードをコピーして、自分のエディタなどで試してみてください。</p>
+                    <div class="code-block">
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;自己紹介&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;こんにちは！&lt;/h1&gt;
+        &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+        &lt;h2&gt;こんにちは！&lt;/h2&gt;
+        &lt;p&gt;映画を見ることと、散歩することが好きです。&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+                        </div>
+            </div>
+            <br>
+            <li id="scroll-contents6">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                       以下の項目を取り入れて、<span>あなただけの自己紹介ページ</span>を作ってみましょう<br>
+                    </p>
+                    <ul>
+                        <li>自分の名前</li>
+                        <li>好きな食べ物</li>
+                        <li>最近見た映画</li>
+                        <li>見出しを2つ以上、段落を3つ以上使う</li>
+                    </ul>
+                </div>
+            <br>
+            <li id="scroll-contents7">まとめ</li>
+            <div class="contents-exam">
+                    <p>
+                       今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li>HTMLはWebページの構造を作るための言語</li>
+                        <li>html, head, body の3つが基本構成</li>
+                        <li>h1〜h6で見出し、pで段落を書く</li>
+                        <li>実際にコードを書いてみることが一番の近道！</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページではWebページに<span>リンクや画像を追加する方法</span>を紹介します！<br>
+                        「他のページに飛ぶ」「画像を表示する」といった基本操作をマスターしましょう。
+                    </p>
+                </div>
+            <br>
+
         </ol>
         <br>
         <div class="flex">
