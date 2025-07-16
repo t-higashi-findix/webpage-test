@@ -24,6 +24,23 @@ $(document).ready(function() {
         }
     );
 
+
+    $('.tab-btn').on('click', function() {
+      // ボタンの選択状態を切り替え
+      $('.tab-btn').removeClass('active');
+      $(this).addClass('active');
+
+      // 対象のコード領域を切り替え
+      if ($(this).data('target') === 'html') {
+        $('.html-code').addClass('active');
+        $('.css-code').removeClass('active');
+      } else {
+        $('.css-code').addClass('active');
+        $('.html-code').removeClass('active');
+      }
+    });
+
+
     // 「TOPに戻る」ボタンの初期化
     let topButton = $('#scrollTop');    // ボタンの要素を変数topButtonに格納
     topButton.hide();   // hideメソッドでtopButtonを非表示にする

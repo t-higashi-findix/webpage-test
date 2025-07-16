@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Lesson 4：ボックスとレイアウトの基礎
+        Lesson 4：CSSの基本と文字装飾
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -30,7 +32,7 @@
                 <ul class="none-html-css">
                     <li><a href="../Lesson1/index.html">Lesson 1：HTMLの超基本</a></li>
                     <li><a href="../Lesson2/index.html">Lesson 2：リンクと画像の使い方</a></li>
-                    <li><a href="../Lesson3/index.html">Lesson 3：CSSの基本と文字装飾</a></li>
+                    <li><a href="../Lesson3/index.html">Lesson 4：CSSの基本と文字装飾</a></li>
                     <li><a href="./index.html">Lesson 4：ボックスとレイアウトの基礎</a></li>
                     <li><a href="../Lesson5/index.html">Lesson 5：ページ構成の設計</a></li>
                     <li><a href="../Lesson6/index.html">Lesson 6：Flexboxで要素を並べる</a></li>
@@ -59,57 +61,175 @@
       <div class="container">
         <h1>東のHTML&CSS学習日誌</h1>
         <h2>Lesson 4：ボックスとレイアウトの基礎</h2>
-        <p>ボックスモデルって何？</p>
-        <p>見た目を整えるための基本をマスターしましょう。</p>
+        <p>Webページの“並び方”を理解して、自由に配置してみよう</p>
         <h5>背景画像  著作者：rawpixel.com/出典：Freepik</h5>
       </div>
     </div>
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> 全ての要素は「ボックス」</a></li>
+            <li><a href="#scroll-contents3"> レイアウトを整えるCSSプロパティ</a></li>
+            <li><a href="#scroll-contents4"> 実例：ボックスの見た目を調整</a></li>
+            <li><a href="#scroll-contents5"> 要素を横に並べるには？</a></li>
+            <li><a href="#scroll-contents6"> 練習課題</a></li>
+            <li><a href="#scroll-contents7"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        前回のレッスンでは、文字に色やサイズなどのスタイルを加えてページにデザインをつける方法を学びました。<br>
+                        今回のテーマは、**要素の配置や並び方を整える「レイアウト」**です。<br>
+                        CSSでは、ページ内の各要素を「ボックス」として捉えて、<br>
+                        そのサイズ・位置・余白などを調整することで、見やすいページ構成を作っていきます。<br>
+                        <br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">すべての要素は「ボックス」</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        HTMLの要素は、**見えない“箱（ボックス）”**に包まれています。<br>
+                        これを<spna>「ボックスモデル」</spna>と呼びます。
                     </p>
-                    <!---->
+                    <img src="./1.png" alt="プロゲートの画像" id="progate-pic">
+                    <p>
+                        引用：<a href="https://prog-8.com/">Progate(https://prog-8.com/)</a>
+                    </p>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">レイアウトを整えるCSSプロパティ</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                       よく使うCSSのプロパティをいくつかご紹介します↓
                     </p>
-                    <!---->
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>プロパティ</th> <th>内容</th> <th>例</th></tr>
+                        </div>
+                        <tr><th><span>width     </span></th> <th>横幅                         </th> <th><span>width: 300px;</span></th></tr>
+                        <tr><th><span>height    </span></th> <th>高さ                         </th> <th><span>height: 150px;</span></th></tr>
+                        <tr><th><span>padding   </span></th> <th>内側の余白                    </th> <th><span>padding: 20px;</span></th></tr>
+                        <tr><th><span>margin    </span></th> <th>外側の余白                    </th> <th><span>margin: 10px;</span></th></tr>
+                        <tr><th><span>border    </span></th> <th>枠線                         </th> <th><span>border: 1px solid #ccc;</span></th></tr>
+                        <tr><th><span>display   </span></th> <th>表示形式（block, inlineなど） </th> <th><span>display: block;</span></th></tr>
+                        <tr><th><span>box-sizing</span></th> <th>枠線やパディングの計算方法     </th> <th><span>box-sizing: border-box</span></th></tr>                        
+                    </table>
                 </div>
+            <br>
+            <li id="scroll-contents4">実例：ボックスの見た目を調整</li>
+                    <div class="contents-exam">
+                        <p>
+                            ボックスの見た目を調整する実例についてお見せします。<br>
+                            <br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active">
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;box model&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="box"&gt;ここはボックスです&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                                </div>
+                                <div class="code-area css-code">
+<pre><code>
+.box {
+  width: 300px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 2px solid #2a7ae2;
+  background-color: #f0f8ff;
+  text-align: center;
+  box-sizing: border-box;
+}
+</code></pre>
+                                </div>
+                                <div class="result-block">
+                                    <img src="./2.png" class="win-trim">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <br>
+            <li id="scroll-contents5">要素を横に並べるには？</li>
+                <div class="contents-exam">
+                    <p>
+                       よく使うCSSのプロパティをいくつかご紹介します↓
+                    </p>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr>
+                            <th>    プロパティ   </th>   <th>   説明    </th>   <th>    例  </th>
+                        </tr>
+                        </div>
+                        <tr>
+                            <th>    <span>color</span>   </th>   <th>   文字の色を指定    </th>   <th>    <span>coler: blue;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-size</span>   </th>   <th>   文字の大きさを指定    </th>   <th>    <span>font-size: 24px;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-family</span>   </th>   <th>   フォントの種類を指定    </th>   <th>    <span>font-family: sans-serif;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>font-weight</span>   </th>   <th>   太字などの強調（boldなど）    </th>   <th>    <span>font-weight: bold;</span>  </th>
+                        </tr>
+                        <tr>
+                            <th>    <span>text-align</span>   </th>   <th>   文字の配置（left,centerなど）    </th>   <th>    <span>text-align: center;</span>  </th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            <br>
+            <li id="scroll-contents6">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                       以下の項目に取り組み、Lesson4の復習をしてみましょう<br>
+                    </p>
+                    <ul>
+                        <li>div要素に枠線、背景色、内側と外側の余白をつける</li>
+                        <li>同じスタイルのボックスを2つ並べて、カード風にする</li>
+                        <li><span>box-sizing: border-box</span>を使ってサイズの扱いを確認する</li>
+                    </ul>
+                </div>
+            <br>
+
+            <li id="scroll-contents7">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li>HTML要素は「見えない箱（ボックス）」で構成されている</li>
+                        <li>ボックスモデルの構造<span>（margin, padding, border, content）</span>を理解しよう</li>
+                        <li><span>width, height, padding, margin, border</span>で大きさや位置を調整できる</li>
+                        <li>要素を横並びにするには<span>float</span>や<span>flexbox</span>を使う</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページでは、ヘッダー・フッター・ナビケーションなど、<span>実践的なWebページの構成方法</span>について学んでいきます
+                    </p>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
@@ -122,8 +242,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
