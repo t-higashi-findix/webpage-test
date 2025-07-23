@@ -7,6 +7,7 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -66,48 +67,123 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> jqueryでできる「要素の操作」とは？</a></li>
+            <li><a href="#scroll-contents2"> 表示・非表示の基本</a></li>
+            <li><a href="#scroll-contents3"> fadeで滑らかに表示・非表示</a></li>
+            <li><a href="#scroll-contents4"> クラスの追加・削除・切り替え</a></li>
+            <li><a href="#scroll-contents5"> 応用：2つの要素を切り替える</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">jqueryでできる「要素の操作」とは？</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryを使うと、HTMLの要素に対して次のような操作が簡単にできます：
+                        <ol>
+                            <li>表示/非表示</li>
+                            <li>クラスの追加・削除・切り替え</li>
+                            <li>内容の書き換え（text / html）</li>
+                        </ol>
+                        今回は特に 表示・非表示 と クラス操作 にフォーカスして学んでいきましょう！
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">表示・非表示の基本)</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQuarynにおける表示・非表示では以下のメソッドを使うことで簡単に実装ができます。<br>
+                        以下に表示・非表示に関するメソッドについて簡単に説明します↓<br>
                     </p>
-                    <!---->
+                    <h3>表示・非表示に関するメソッド</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>メソッド</th> <th>説明</th></tr>
+                        </div>
+                        <tr><th><span>.fadeIn()</span></th> <th>要素を表示する</th></tr>
+                        <tr><th><span>.fadeOut()</span></th> <th>要素を非表示にする</th></tr>
+                        <tr><th><span>.fadeToggle()</span></th> <th>表示/非表示を切り替える</th></tr>
+                    </table>
+                    <div class="code-area">
+<pre><code>
+&lt;p id="fade-text"&gt;ふわっと表示・非表示&lt;/p&gt;
+&lt;button id="fade-btn"&gt;fade切り替え&lt;/button&gt;
+
+&lt;script&gt;
+$(document).ready(function() {
+    $('#fade-btn').click(function() {
+    $('#fade-text').fadeToggle();
+});
+});
+&lt;/script&gt;
+</code></pre>
+                    </div>
+                    <br>
+<div class="code-block"><pre><code>&lt;p id="msg"&gt;こんにちは！&lt;/p&gt;
+&lt;button id="btn"&gt;クリックして変更&lt;/button&gt;
+
+&lt;script&gt;
+&nbsp;$(document).ready(function() {
+&nbsp;&nbsp;$('#btn').click(function() {
+&nbsp;&nbsp;&nbsp;$('#msg').text('こんにちは、jQuery！');
+&nbsp;&nbsp;});
+&nbsp;});
+&lt;/script&gt;</code></pre></div>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">クラスの追加・削除・切り替え</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryでは見た目にかかわるイベントのみならず、クラスの追加や削除も行うことができます。<br>
+                        以下のにクラスの追加や削除にかかわるメソッドについて簡単に説明します。<br>
                     </p>
-                    <!---->
+                    <h3>クラスの追加・削除・切り替えにかかわるメソッド</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>メソッド</th> <th>説明</th></tr>
+                        </div>
+                        <tr><th><span>.addClass</span></th> <th>クラスを追加する</th></tr>
+                        <tr><th><span>.removeClass()</span></th> <th>クラスを削除する</th></tr>
+                        <tr><th><span>.toggleClass()</span></th> <th>クラスの有無を切り替える</th></tr>
+                    </table>
+                    
+                </div>
+                <br>
+            <li id="scroll-contents4">応用：2つの要素を切り替える</li>
+                <div class="contents-exam">
+                    <p>
+                        toggleClassを使うことで2つの要素を切り替えているように表示することもできます。
+                    </p>
+<div class="code-block"><pre><code>&lt;p id="msg1"&gt;こんにちは！&lt;/p&gt;
+&lt;p id="msg2" style="display:none;"&gt;さようなら！&lt;/p&gt;
+&lt;button id="switch-btn"&gt;切り替え&lt;/button&gt;
+
+&lt;script&gt;
+&nbsp;$(document).ready(function() {
+&nbsp;&nbsp;$('#switch-btn').click(function() {
+&nbsp;&nbsp;&nbsp;$('#msg1').toggle();
+&nbsp;&nbsp;&nbsp;$('#msg2').toggle();
+&nbsp;&nbsp;});
+&nbsp;});
+&lt;/script&gt;</code></pre></div>
+                </div>
+            <li id="scroll-contents5">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        まとめです↓
+                    </p>
+                    <ul>
+                        <li><span>.show()</span> / <span>.hide()</span> / <span>.toggle</span>で表示状態を制御できる</li>
+                        <li><span>.fadeToggle()</span>などを使うとアニメーションが付くようになる</li>
+                        <li><span>.addClass()</span> / <span>.removeClass()</span> / <span>.toggleClass</span>でクラスの切り替えが可能</li>
+                    </ul>
+                    <p>
+                        次回はWebページをさらに華やかにできるアニメーションについて学びましょう！<br>
+                    </p>
                 </div>
         </ol>
         <br>
@@ -121,8 +197,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもjQueryを始めてみましょう！</h2>
+          <h3>Let's learn to jQuery, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
