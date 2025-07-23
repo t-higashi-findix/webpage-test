@@ -7,6 +7,7 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -66,48 +67,152 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> イベントとは？</a></li>
+            <li><a href="#scroll-contents2"> よく使われるイベント一覧</a></li>
+            <li><a href="#scroll-contents3"> 基本構文</a></li>
+            <li><a href="#scroll-contents4"> 入力フォームのイベント例</a></li>
+            <li><a href="#scroll-contents5"> より読みやすく書くには？</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">イベントとは？</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        イベントとは、「クリック」や「マウスオーバー」、「キーボード入力」など、<span>ユーザーのアクションに応じて発生する動作</span>のことです。<br>
+                        jQueryを使えば、こうしたイベントに簡単に反応するコードを書けます。
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">よく使われるイベント一覧</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryでよく使われるイベントについて以下の表にまとめます。↓
                     </p>
-                    <!---->
+                    <h3>jQueryイベントの基本構文</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>イベント名</th> <th>説明</th></tr>
+                        </div>
+                        <tr><th><span>click</span></th> <th>要素がクリックされた時</th></tr>
+                        <tr><th><span>dbclick</span></th> <th>要素がダブルクリックされた時</th></tr>
+                        <tr><th><span>mouseenter</span></th> <th>マウスが要素に乗った時</th></tr>
+                        <tr><th><span>mouseleave</span></th> <th>マウスが要素から離れた時</th></tr>
+                        <tr><th><span>hover</span></th> <th><span>mouseenter</span>と<span>mouseleave</span>を組み合わせたもの（まとめたもの？）</th></tr>
+                        <tr><th><span>change</span></th> <th>値が変更された時（フォームなど）</th></tr>
+                        <tr><th><span>keydown</span></th> <th>キーが押された時</th></tr>
+                        <tr><th><span>submit</span></th> <th>フォームが送信された時</th></tr>
+                    </table>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">基本構文</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryのイベントの基本構文は次のように書きます。
                     </p>
-                    <!---->
+                    <div class="code-block">
+<pre><code>$(セレクタ).イベント名(function() {
+    // 実行したい処理
+});</code></pre>
+                    </div>
+                    <p>
+                        ↓htmlに組み込む例
+                    </p>
+                    <div class="code-block">
+<pre><code>
+&lt;p id="msg"&gt;こんにちは！&lt;/p&gt;
+&lt;button id="btn"&gt;クリックして変更&lt;/button&gt;
+
+&lt;script&gt;
+    $(document).ready(function() {
+        $('#btn').click(function() {
+            $('#msg').text('こんにちは、jQuery！');
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+                    </div>
+                    <h3>
+                        複数のイベントの割り当ても可能
+                    </h3>
+                    <div class="code-block">
+<pre><code>
+&lt;p id="hover-msg"&gt;ここにマウスを乗せてみて&lt;/p&gt;
+
+&lt;script&gt;
+$(document).ready(function() {
+    $('#hover-msg').mouseenter(function() {
+        $(this).text('マウスが乗りました！');
+    }).mouseleave(function() {
+        $(this).text('また来てね〜');
+    });
+});
+&lt;/script&gt;
+</code></pre>
+                    </div>
+                </div>
+            <li id="scroll-contents4">入力フォームのイベント例</li>
+                <div class="contents-exam">
+                    <p>
+                        以下に入力フォームのイベントの作成例を示します。↓
+                    </p>
+                    <div class="code-block" id="code-block4">
+<pre><code>
+&lt;input type="text" id="name" placeholder="名前を入力"&gt;
+&lt;p id="output"&gt;名前がここに表示されます&lt;/p&gt;
+
+&lt;script&gt;
+    $(document).ready(function() {
+        $('#name').change(function() {
+            let value = $(this).val();
+            $('#output').text('こんにちは、' + value + 'さん！');
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+                    </div>
+                    <ul>
+                        <li><span>val()</span>でフォームの値を取得</li>
+                        <li><span>change</span>イベントで値の変更に反応</li>
+                    </ul>
+                </div>
+            <li id="scroll-contents5">より読みやすく書くには？</li>
+                <div class="contents-exam">
+                    <p>
+                        仮にボタンなどが複数あり、それらすべてにクリックによるイベントを割り当てたい...！<br>
+                        でもそれぞれのクラス名が違う！ そんなとき、ありませんか？<br>
+                        そんな時は<span>同じidを割り当てて関数にイベントリスナーを分ける</span>という方法を試してみてはどうでしょうか<br>
+                        <br>
+                        以下が作成例になります。↓
+                    </p>
+                    <div class="code-block" id="code-block4">
+<pre><code>
+function sayHello() {
+    $('#msg').text('こんにちは！');
+}
+
+$(document).ready(function() {
+    $('#btn').click(sayHello);
+});
+</code></pre>
+                    </div>
+                </div>
+            <li id="scroll-contents6">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        まとめです↓
+                    </p>
+                    <ul>
+                        <li>jQueryでは<span>.click</span>や<span>.change</span>などのイベントメソッドを使うことで、<br>
+                        ユーザーの操作に反応するインタラクティブなページを作れる。</li>
+                        <li>複数イベントの組み合わせや関数での整理も可能</li>
+                    </ul>
+                    <p>
+                        次回は**要素の操作（表示/非表示・クラス切り替え）**について学びましょう！<br>
+                    </p>
                 </div>
         </ol>
         <br>
@@ -121,8 +226,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもjQueryを始めてみましょう！</h2>
+          <h3>Let's learn to jQuery, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
