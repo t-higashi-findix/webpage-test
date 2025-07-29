@@ -96,33 +96,27 @@
                         Webページの**構造（骨組み）**を記述するための言語です。<br>
                         ページの見た目を整えるCSSとは違い、HTMLは「この部分は見出し」「ここは段落」「ここに画像を表示する」といった内容の役割を記述します。<br>
                     </p>
-                    <!---->
                 </div>
             <br>
             <li id="scroll-contents3">HTMLの基本構造</li>
                 <div class="contents-exam">
                     <p>
+                        htmlは<span>○○.html</span>というファイル形式です。<br>
                         まずは最もシンプルなHTML文書の基本構造を見てみましょう。<br>
                         左が実際のhtmlのプログラムで、右が実行結果です<br>
                         <br>
                     </p>
                     <div class="FLEX">
-                        <div class="code-block">
-<!-- 詰めないとtab分だけ幅が広がる -->
-<pre><code>
-    &lt;!DOCTYPE html&gt;
+                        <div class="code-block"><!-- 詰めないとtab分だけ幅が広がる --><pre><code>&lt;!DOCTYPE html&gt;
     &lt;html&gt;
     &lt;head&gt;
-        &lt;title&gt;はじめてのページ&lt;/title&gt;
+    &nbsp;&nbsp;&lt;title&gt;はじめてのページ&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;h1&gt;こんにちは！&lt;/h1&gt;
-        &lt;p&gt;これが最初の文章です。&lt;/p&gt;
+    &nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p&gt;これが最初の文章です。&lt;/p&gt;
     &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre>
-
-                        </div>
+    &lt;/html&gt;</code></pre></div>
                         <div class="result-block">
                             <img src="./1.png" class="win-trim">
                         </div>
@@ -150,7 +144,7 @@
                         </tr>
                     </table>
                     <p>
-                        htmlでは＜～＞と＜／～＞の"タグ"という部分に囲まれたもので作られています。<br>
+                        htmlでは&lt;～&gt;と&lt;/～&gt;の"タグ"という部分に囲まれたもので作られています。<br>
                         タグを使うことでページを領域ごとに分割しているイメージです<br>
                     </p>
                 </div>
@@ -164,14 +158,10 @@
                         <br>
                     </p>
                     <div class="FLEX">
-                        <div class="code-block">
-<!-- 詰めないとtab分だけ幅が広がる -->
-<pre><code>
-    &lt;h1&gt;大見出し&lt;/h1&gt;
+                        <div class="code-block"><pre><code>&lt;h1&gt;大見出し&lt;/h1&gt;
     &lt;h2&gt;中見出し&lt;/h2&gt;
     &lt;h3&gt;小見出し&lt;/h3&gt;
-</code></pre>
-                        </div>
+</code></pre></div>
                         <div class="result-block">
                             <img src="./2.png" class="win-trim">
                         </div>
@@ -185,12 +175,7 @@
                         本文となる文章によく使われます。<br>
                     </p>
                     <div class="FLEX">
-                        <div class="code-block">
-<!-- 詰めないとtab分だけ幅が広がる -->
-<pre><code>
-    &lt;p&gt;これは段落です。何かを説明したりする文章に使われます。&lt;/p&gt;
-</code></pre>
-                        </div>
+                        <div class="code-block"><pre><code>&lt;p&gt;これは段落です。何かを説明したりする文章に使われます。&lt;/p&gt;</code></pre></div>
                         <div class="result-block">
                             <img src="./3.png" class="win-trim">
                         </div>
@@ -200,23 +185,19 @@
             <li id="scroll-contents5">実際に書いてみよう！</li>
             <div class="contents-exam">
                 <p>以下のコードをコピーして、自分のエディタなどで試してみてください。</p>
-                    <div class="code-block">
-<pre><code>
-    &lt;!DOCTYPE html&gt;
+                    <div class="code-block"><pre><code>&lt;!DOCTYPE html&gt;
     &lt;html&gt;
     &lt;head&gt;
-        &lt;title&gt;自己紹介&lt;/title&gt;
+    &nbsp;&nbsp;&lt;title&gt;自己紹介&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;h1&gt;こんにちは！&lt;/h1&gt;
-        &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
-        &lt;h2&gt;こんにちは！&lt;/h2&gt;
-        &lt;p&gt;映画を見ることと、散歩することが好きです。&lt;/p&gt;
+    &nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+        
+    &nbsp;&nbsp;&lt;h2&gt;趣味&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;映画を見ることと、散歩することが好きです。&lt;/p&gt;
     &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre>
-
-                        </div>
+    &lt;/html&gt;</code></pre></div>
             </div>
             <br>
             <li id="scroll-contents6">練習課題</li>
@@ -234,21 +215,21 @@
             <br>
             <li id="scroll-contents7">まとめ</li>
             <div class="contents-exam">
-                    <p>
-                       今回のまとめです↓<br>
-                    </p>
-                    <ul>
-                        <li>HTMLはWebページの構造を作るための言語</li>
-                        <li>html, head, body の3つが基本構成</li>
-                        <li>h1〜h6で見出し、pで段落を書く</li>
-                        <li>実際にコードを書いてみることが一番の近道！</li>
-                    </ul>
-                    <br>
-                    <p>
-                        次のページではWebページに<span>リンクや画像を追加する方法</span>を紹介します！<br>
-                        「他のページに飛ぶ」「画像を表示する」といった基本操作をマスターしましょう。
-                    </p>
-                </div>
+                <p>
+                    今回のまとめです↓<br>
+                </p>
+                <ul>
+                    <li>HTMLはWebページの構造を作るための言語</li>
+                    <li>html, head, body の3つが基本構成</li>
+                    <li>h1〜h6で見出し、pで段落を書く</li>
+                    <li>実際にコードを書いてみることが一番の近道！</li>
+                </ul>
+                <br>
+                <p>
+                    次のページではWebページに<span>リンクや画像を追加する方法</span>を紹介します！<br>
+                    「他のページに飛ぶ」「画像を表示する」といった基本操作をマスターしましょう。
+                </p>
+            </div>
             <br>
 
         </ol>

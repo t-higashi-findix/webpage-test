@@ -196,8 +196,12 @@ header {
   padding: 0 5%;
 }
 .contents-exam span {
-  font-size: 1.5em;
+  font-size: 1em;
   color: red;
+}
+.contents-exam li {
+  margin: 20px 0%; /* ← 縦に余白 */
+  font-size: 1.3em;
 }
 .flex {         /* 横並びにして左右の端にそれぞれを寄せる */
   display: flex;
@@ -326,4 +330,9 @@ footer {
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+/* コードの空白を消去 */
+code {
+    white-space: pre-line;
 }
