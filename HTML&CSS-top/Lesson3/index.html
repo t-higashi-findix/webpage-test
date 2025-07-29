@@ -84,7 +84,7 @@
             <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        HTMLでWebページの「構造」が書けるようになったら、次に学ぶべきはCSS（シーエスエス）。<br>
+                        HTMLでWebページの「構造」が書けるようになったら、次に学ぶべきは<span>CSS（シーエスエス）</span>。<br>
                         CSSは、文字の色や大きさ、背景などを設定できる「Webページのデザイン担当」です。<br>
                         このレッスンでは、CSSの基本的な使い方と、文字にスタイルを加える方法を学びます。<br>
                         ほんの少しCSSを加えるだけで、ページの印象が大きく変わりますよ <br>
@@ -94,7 +94,7 @@
             <li id="scroll-contents2">CSSってなに？</li>
                 <div class="contents-exam">
                     <p>
-                        CSSは **Cascading Style Sheets（カスケーディング・スタイル・シート）**の略で、HTMLで作った構造に対して「見た目の指示」を与える言語です。<br>
+                        CSSは <span>Cascading Style Sheets（カスケーディング・スタイル・シート）</span>の略で、HTMLで作った構造に対して「見た目の指示」を与える言語です。<br>
                         例えば、文字の色やサイズ、フォント、行間、背景などを変えることができます。<br>
                     </p>
                 </div>
@@ -107,21 +107,13 @@
                     </p>
                     <br>
                     <div class="flex">
-                        <div class="code-block">
-<pre><code>
-セレクタ {
-    プロパティ: 値;
-}
-</code></pre>
-                        </div>
-                        <div class="code-block">
-<pre><code>
-h1 {
-    color: red;
-    font-size: 32px;
-}
-</code></pre>
-                        </div>
+                        <div class="code-block"><pre><code>セレクタ {
+&nbsp;&nbsp;プロパティ: 値;
+}</code></pre></div>
+                        <div class="code-block"><pre><code>h1 {
+&nbsp;&nbsp;color: red;
+&nbsp;&nbsp;font-size: 32px;
+}</code></pre></div>
                     </div>
 
                     <p>
@@ -137,13 +129,11 @@ h1 {
                     <p>
                         CSSは3つの方法でHTMLに適用できます。
                         <ul>
-                            <li>HTMLファイルとは別にCSSファイルをつくり、<br>HTML文書内にそのファイルをCSSとして利用することを記す<br>（外部スタイルシート）。</li>
-                            <li>HTML文書のhead要素内にstyle要素を設け、HTML文書内にCSSを埋め込む<br>（内部スタイルシート）。</li>
-                            <li>HTMLの各要素にstyle属性を用いて直接記入する。</li>
+                            <li>HTMLファイルとは別にCSSファイルをつくり、<br>HTML文書内にそのファイルをCSSとして利用することを記す。<br>（外部スタイルシート）</li>
+                            <li>HTML文書のhead要素内に<span>style</span>要素を設け、HTML文書内にCSSを埋め込む。<br>（内部スタイルシート）</li>
+                            <li>HTMLの各要素に<span>style</span>属性を用いて直接記入する。</li>
                         </ul>
-                        <br>
-                        引用：<a href="https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html" target="_blank">「HTML+CSSまとめページ/CSSの適用方法」(https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html)</a>
-                        <br>
+                        引用：<a href="https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html" target="_blank">「HTML+CSSまとめページ/CSSの適用方法」(https://cc.musabi.ac.jp/kenkyu/cl1/html5/css_apply.html)</a><br>
                         <br>
                         <br>
                         この記事は外部スタイルシートを使って.cssファイルを読み込むことで.htmlファイルを装飾しています。<br>
@@ -160,28 +150,24 @@ h1 {
                                     以下は.cssファイルを読み込まない状態における画面です。
                                 </p>
                             <div class="flex">
-                                <div class="code-block" id="code-block4">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                                <div class="code-block" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;CSS適用前&lt;/title&gt;
+    &nbsp;&nbsp;&lt;title&gt;css適用前&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;こんにちは！&lt;/h1&gt;
-    &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+    &nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
     
-    &lt;h2&gt;趣味&lt;/h2&gt;
-    &lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
-    &lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
+    &nbsp;&nbsp;&lt;h2&gt;趣味&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
+    &nbsp;&nbsp;&lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
 
-    &lt;h2&gt;作ったサイト&lt;/h2&gt;
-    &lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
-
+    &nbsp;&nbsp;&lt;h2&gt;作ったサイト&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-                                </div>
+</code></pre></div>
                                 <div class="result-block">
                                     <img src="./1.png" class="win-trim">
                                 </div>
@@ -196,49 +182,44 @@ h1 {
                                     <button class="tab-btn" data-target="css"> style.css </button>
                                 </div>
                                 <div class="code-preview-content">
-                                    <div class="code-area html-code active" id="code-block4">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                                    <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    <span>&lt;title&gt;CSS適用後&lt;/title&gt;</span>
-    <span>&lt;link rel="stylesheet" href="style.css"&gt;</span>
+    &nbsp;&nbsp;<span>&lt;title&gt;css適用後&lt;/title&gt;</span>
+    &nbsp;&nbsp;<span>&lt;link rel="stylesheet" href="style.css"&gt;</span>
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;こんにちは！&lt;/h1&gt;
-    &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+    &nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
     
-    &lt;h2&gt;趣味&lt;/h2&gt;
-    &lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
-    &lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
+    &nbsp;&nbsp;&lt;h2&gt;趣味&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
+    &nbsp;&nbsp;&lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
 
-    &lt;h2&gt;作ったサイト&lt;/h2&gt;
-    &lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
-
+    &nbsp;&nbsp;&lt;h2&gt;作ったサイト&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-                                    </div>
-                                    <div class="code-area css-code" id="code-block4">
-<pre><code>
-h1 {
-    color: red;
+</code></pre></div>
+                                    <div class="code-area css-code" id="code-block4"><pre><code><span>h1 {
+    &nbsp;&nbsp;color: red;
 }
 p {
-    font-family: "Yu Gothic";
-    font-size: 1.2em;
+    &nbsp;&nbsp;font-family: "Yu Gothic";
+    &nbsp;&nbsp;font-size: 1.2em;
 }
 h2 {
-    font-family: "游明朝";
-    color:blue;
-    border-bottom: 2px solid blue;
-}
-</code></pre>
-                                    </div>
+    &nbsp;&nbsp;font-family: "游明朝";
+    &nbsp;&nbsp;color:blue;
+    &nbsp;&nbsp;border-bottom: 2px solid blue;
+}</span></code></pre></div>
                                     <div class="result-block">
                                         <img src="./2.png" alt="プレビュー画像" width="100%" class="win-trim">
                                     </div>
                                 </div>
+                                <p>
+                                    cssファイルが読み込まれてwebページが華やかになりましたね。<br>
+                                </p>
                             </div>
 
                             <li>内部スタイルシートの方法</li>
@@ -247,38 +228,35 @@ h2 {
                                     以下が使用例になります。結果は上のものと同じのため割愛します。<br>
                                     <br>
                                 </p>
-                            <div class="code-block" id="code-block4">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                            <div class="code-block" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;css適用後&lt;/title&gt;
-    <span>&lt;style&gt;
-        h1 {
-            color: red;
-        }
-        p {
-            font-family: "Yu Gothic";
-            font-size: 1.2em;
-        }
-        h2 {
-            font-family: "游明朝";
-            color:blue;
-            border-bottom: 2px solid blue;
-        }
-    &lt;/style&gt;</span>
+    &nbsp;&nbsp;&lt;title&gt;css適用後&lt;/title&gt;
+    &nbsp;&nbsp;<span>&lt;style&gt;
+        &nbsp;&nbsp;h1 {
+        &nbsp;&nbsp;&nbsp;&nbsp;    color: red;
+        &nbsp;&nbsp;}
+        &nbsp;&nbsp;p {
+        &nbsp;&nbsp;&nbsp;&nbsp;    font-family: "Yu Gothic";
+        &nbsp;&nbsp;&nbsp;&nbsp;    font-size: 1.2em;
+        &nbsp;&nbsp;}
+        &nbsp;&nbsp;h2 {
+        &nbsp;&nbsp;&nbsp;&nbsp;    font-family: "游明朝";
+        &nbsp;&nbsp;&nbsp;&nbsp;    color:blue;
+        &nbsp;&nbsp;&nbsp;&nbsp;    border-bottom: 2px solid blue;
+        &nbsp;&nbsp;}
+    &nbsp;&nbsp;&lt;/style&gt;</span>
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;こんにちは！&lt;/h1&gt;
-    &lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+    &nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
     
-    &lt;h2&gt;趣味&lt;/h2&gt;
-    &lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
-    &lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
+    &nbsp;&nbsp;&lt;h2&gt;趣味&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;
+    &nbsp;&nbsp;&lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
 
-    &lt;h2&gt;作ったサイト&lt;/h2&gt;
-    &lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
-
+    &nbsp;&nbsp;&lt;h2&gt;作ったサイト&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p&gt;&lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -294,32 +272,29 @@ h2 {
                                     以下が使用例になります。結果は上のものと同じのため割愛します。<br>
                                     <br>
                                 </p>
-                                <div class="code-block" id="code-block4">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                                <div class="code-block" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;css適用後&lt;/title&gt;
+    &nbsp;&nbsp;&lt;title&gt;css適用後&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    <span>&lt;h1 style="color: red"&gt;こんにちは！&lt;/h1&gt;
-    &lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
+    &nbsp;&nbsp;<span>&lt;h1 style="color: red"&gt;こんにちは！&lt;/h1&gt;
+    &nbsp;&nbsp;&lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;はじめまして。私は Web開発を勉強中です。&lt;/p&gt;
     
-    &lt;h2 style="font-family: 游明朝; color: blue; border-bottom: 2px solid blue"&gt;趣味&lt;/h2&gt;
-    &lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;</span>
-    &lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
+    &nbsp;&nbsp;&lt;h2 style="font-family: 游明朝; color: blue; border-bottom: 2px solid blue"&gt;趣味&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;カメラが好きで、犬の写真を撮っています&lt;/p&gt;</span>
+    &nbsp;&nbsp;&lt;img src="Luke(3).jpg" alt="犬の写真" width="300"&gt;
 
-    <span>&lt;h2 style="font-family: 游明朝; color: blue; border-bottom: 2px solid blue;"&gt;作ったサイト&lt;/h2&gt;
-    &lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;</span>
-        &lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;
-    &lt;/p&gt;
-
+    &nbsp;&nbsp;<span>&lt;h2 style="font-family: 游明朝; color: blue; border-bottom: 2px solid blue;"&gt;作ったサイト&lt;/h2&gt;
+    &nbsp;&nbsp;&lt;p style="font-family: Yu Gothic" style="font-size: 1.2em"&gt;</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &lt;a href="https://t-higashi-findix.github.io/webpage-test/HTML&CSS-top/index.html" target="_blank"&gt;東のHTML & CSS, jQuery学習日誌&lt;/a&gt;
+    &nbsp;&nbsp;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
                             </div>
                             <p>
-                                この方法では同じタグでも異なるCSSを指定したいときに使えそうですね。<br>
+                                1つ1つ指定するのは大変ですが、この方法では同じタグでも異なるCSSを指定したいときに使えそうですね。<br>
                                 （例えばh1タグの見出しを2か所に使いたいが色だけは別々にしたい。など）<br>
                                 <br>
                             </p>
@@ -371,56 +346,48 @@ h2 {
                                     <button class="tab-btn" data-target="css"> style.css </button>
                                 </div>
                                 <div class="code-preview-content">
-                                    <div class="code-area html-code active" id="code-block4">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                                    <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;スタイル付き自己紹介&lt;/title&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;こんにちは！&lt;/h1&gt;
-    &lt;p class="intro"&gt;CSSでページにデザインを加えてみました。&lt;/p&gt;
-    &lt;div class="main-wrapper"&gt;
-        &lt;img src="./Luke(3).jpg" id="dog"&gt;
-        &lt;p&gt;我が家のワンコです。今年で6歳(?)になります。&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-                                    </div>
-                                    <div class="code-area css-code" id="code-block4">
-<pre><code>
-body {
-  background-color: #f0f8ff;
-  font-family: "Helvetica", sans-serif;
+&lt;head&gt;
+&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;
+&nbsp;&nbsp;&lt;title&gt;スタイル付き自己紹介&lt;/title&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp;&nbsp;&lt;h1&gt;こんにちは！&lt;/h1&gt;
+&nbsp;&nbsp;&lt;p class="intro"&gt;CSSでページにデザインを加えてみました。&lt;/p&gt;
+&nbsp;&nbsp;&lt;div class="main-wrapper"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="./Luke(3).jpg" id="dog"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;我が家のワンコです。今年で6歳(?)になります。&lt;/p&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                                    <div class="code-area css-code" id="code-block4"><pre><code>body {
+&nbsp;&nbsp;background-color: #f0f8ff;
+&nbsp;&nbsp;font-family: "Helvetica", sans-serif;
 }
 
 h1 {
-  color: #2a7ae2;
-  font-size: 36px;
-  text-align: center;
+&nbsp;&nbsp;color: #2a7ae2;
+&nbsp;&nbsp;font-size: 36px;
+&nbsp;&nbsp;text-align: center;
 }
 
 .intro {
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+&nbsp;&nbsp;color: #333;
+&nbsp;&nbsp;font-size: 18px;
+&nbsp;&nbsp;font-weight: bold;
+&nbsp;&nbsp;text-align: center;
 }
 
 .main-wrapper {
-    text-align: center;
-    border: double 5px #668ad8;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;border: double 5px #668ad8;
 }
 
 #dog {
-    width: 400px;
-}
-</code></pre>
-                                    </div>
+&nbsp;&nbsp;width: 400px;
+}</code></pre></div>
                                 <div class="result-block">
                                     <img src="./3.png" class="win-trim">
                                 </div>
