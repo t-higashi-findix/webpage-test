@@ -95,7 +95,7 @@ header {
 
 .top-wrapper {
   padding: 180px 0 100px 0;
-  background-image: url("img/kong-bainoaru-zhi-wuno-bino-peng.jpg");
+  background-image: url("img/img14.png");
   background-size: 100% 100%;
   color: white;
 }
@@ -104,7 +104,7 @@ header {
   opacity: 0.7;
   font-size: 45px;
   letter-spacing: 5px;
-  color:orange;
+  color:purple;
   text-align: left;
 }
 
@@ -112,13 +112,13 @@ header {
   opacity: 0.7;
   font-size: 2.5em;
   letter-spacing: 5px;
-  color:orange;
+  color: purple;
   text-align: left;
 }
 
 .top-wrapper p {
   opacity: 0.7;
-  color: orange;
+  color: purple;
 }
 
 .top-wrapper h5 {
