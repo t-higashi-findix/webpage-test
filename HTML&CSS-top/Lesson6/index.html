@@ -7,6 +7,8 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -59,56 +61,262 @@
       <div class="container">
         <h1>東のHTML&CSS学習日誌</h1>
         <h2>Lesson 6：Flexboxで要素を並べる</h2>
-        <p>Flexboxで要素を横に並べたり、整列させたりしてみましょう。</p>
+        <p>横並び・中央揃え・レスポンシブ…レイアウトの悩みはFlexboxで解決！</p>
         <h5>背景画像  著作者：rawpixel.com/出典：Freepik</h5>
       </div>
     </div>
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> Flexboxとは？</a></li>
+            <li><a href="#scroll-contents3"> 基本の使い方</a></li>
+            <li><a href="#scroll-contents4"> よく使うFlexboxプロパティ</a></li>
+            <li><a href="#scroll-contents5"> 実例：カードを横並びに</a></li>
+            <li><a href="#scroll-contents6"> レスポンシブ対応のヒント</a></li>
+            <li><a href="#scroll-contents7"> 練習問題</a></li>
+            <li><a href="#scroll-contents8"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        前回は、Webページ全体の構成（ヘッダー、ナビ、フッターなど）を学びました。<br>
+                        今回はその中でも特に重要な「レイアウト」の技術として、<span><u><b>Flexbox（フレックスボックス）</b></u></span>を学びます。<br>
+                        Flexboxを使うことで、<span><u>要素の横並び</u></span>や<span><u>中央揃え</u></span>、<span><u>間隔の調整</u></span>などがとても簡単になります。<br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">Flexboxとは？</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        <span>Flexbox（Flexible Box Layout）</span>は、要素を効率よく並べるためのCSSのレイアウト手法です。
+                        <ul>
+                            <li><u>要素を横に並べたい</u></li>
+                            <li><u>要素を上下左右中央に配置したい</u></li>
+                            <li><u>要素間にスペースを入れたい</u></li>
+                        </ul>
+                        こんな場面で大活躍です。
                     </p>
-                    <!---->
+                    <div class="FLEX">
+                        <img src="./1.png" alt="パワポ画像" id="ppt-pic">
+                        <p> ↑私はこのように要素を横並びにするために使うことが多いです！</p>
+                    </div>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">基本の使い方</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                       基本的な使い方は以下の通りです。<br>
+                       CSSファイルに横並びにしたい要素を含んだ親要素に<span>display: flex;</span>と記述します。
                     </p>
-                    <!---->
+                    <div class="code-block"><pre><code>セレクタ {
+&nbsp;&nbsp;<span>display: flex;</span>
+}</code></pre></div>
+                    <p>
+                        これでセレクタに含まれる子要素が横並びになります。
+                        例として、以下に3つの要素を横に並べるコードを示します。
+                    </p>
+                    <div class="code-preview-wrapper">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="html"> index.html </button>
+                            <button class="tab-btn" data-target="css"> style.css </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&lt;title&gt;box model&lt;/title&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp;&nbsp;&lt;div class="container"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="box"&gt;A&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="box"&gt;B&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="box"&gt;C&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                            <div class="code-area css-code" id="code-block4"><pre><code>.container {
+&nbsp;&nbsp;display: flex;
+}
+
+.box {
+&nbsp;&nbsp;width: 100px;
+&nbsp;&nbsp;height: 100px;
+&nbsp;&nbsp;background-color: #2a7ae2;
+&nbsp;&nbsp;color: white;
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;align-items: center;
+&nbsp;&nbsp;justify-content: center;
+&nbsp;&nbsp;border: 3px solid black;
+}</code></pre></div>
+                            <div class="result-block">
+                                <img src="./3.png" alt="プレビュー画像" class="win-trim">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            <br>
+            <li id="scroll-contents4">よく使うFlexboxプロパティ</li>
+                    <div class="contents-exam">
+                        <p>
+                            よく使うFlexboxプロパティを以下にまとめます。
+                        </p>
+                        <div class="FLEX">
+                            <div class="FLEX_item">
+                                <h3>プロパティ</h3>
+                                <table border="2" class="test-table">
+                                    <caption></caption>
+                                    <div id="property">
+                                    <tr><th>プロパティ</th> <th>説明</th> <th>主に使う場所</th></tr>
+                                    </div>
+                                    <tr><th><span>display: flex;</span></th> <th>Flexboxを有効にする           </th> <th>親要素（コンテナ）</th></tr>
+                                    <tr><th><span>flex-direction</span></th> <th>並び方（row=横、column=縦）   </th> <th>親要素</th></tr>
+                                    <tr><th><span>jusify-content</span></th> <th>主軸方向の並び方              </th> <th>親要素</th></tr>
+                                    <tr><th><span>align-items   </span></th> <th>交差軸方向の並び方            </th> <th>親要素</th></tr>
+                                    <tr><th><span>gap           </span></th> <th>要素間のスペース              </th> <th>親要素</th></tr>
+                                    <tr><th><span>align-self    </span></th> <th>要素ごとに縦位置を変える       </th> <th>子要素</th></tr>
+                                </table>
+                            </div>
+                            <div class="FLEX_item">
+                                <h3>配置のパターン</h3>
+                                <table border="2" class="test-table">
+                                    <caption></caption>
+                                    <div id="property">
+                                    <tr><th>値</th> <th>説明</th></tr>
+                                    </div>
+                                    <tr><th><span>flex-start    </span></th> <th>左揃え（初期状態）</th></tr>
+                                    <tr><th><span>center        </span></th> <th>中央揃え</th></tr>
+                                    <tr><th><span>space-between </span></th> <th>両端揃え＋間に均等なスペース</th></tr>
+                                    <tr><th><span>space-around  </span></th> <th>全体に均等なスペース</th></tr>
+                                    <tr><th><span>space-evenly  </span></th> <th>等間隔で配置</th></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+            <li id="scroll-contents5">実例：カードを横並びに</li>
+               <div class="contents-exam">
+                    <p>
+                        実例として3枚のカードを横並びにするコードを以下に示します。
+                    </p>
+                    <div class="code-preview-wrapper">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="html"> index.html </button>
+                            <button class="tab-btn" data-target="css"> style.css </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&lt;title&gt;box model&lt;/title&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp;&nbsp;&lt;div class="card-container"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card"&gt;カード1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card"&gt;カード2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card"&gt;カード3&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                            <div class="code-area css-code" id="code-block4"><pre><code>.card-container {
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;gap: 20px;
+&nbsp;&nbsp;justify-content: center;
+}
+
+.card {
+&nbsp;&nbsp;width: 150px;
+&nbsp;&nbsp;height: 100px;
+&nbsp;&nbsp;background-color: #f2f2f2;
+&nbsp;&nbsp;border: 1px solid #ccc;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;line-height: 100px;
+&nbsp;&nbsp;font-weight: bold;
+}</code></pre></div>
+                            <div class="result-block">
+                                <img src="./2.png" alt="プレビュー画像" class="win-trim">
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Flexboxを使うと要素を簡単に横並びにすることができますね。<br>
+                        ちなみに<span>gap: 20px;</span>で要素間のスペースを調節しています。<span>margin</span>などで調整が難しいときなど便利です。<br>
+                    </p>
+                    <h3>レスポンシブ対応のヒント</h3>
+                    <p>
+                        Flexboxは画面サイズにも柔軟に対応します。<br>
+                        次のようにcssファイルに書き加えると、要素が折り返されるようにできます。<br>
+                    </p>
+                    <div class="code-preview-wrapper">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="css"> style.css </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area css-code active" id="code-block4"><pre><code>.card-container {
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;gap: 20px;
+&nbsp;&nbsp;justify-content: center;
+}
+
+.card {
+&nbsp;&nbsp;width: 150px;
+&nbsp;&nbsp;height: 100px;
+&nbsp;&nbsp;background-color: #f2f2f2;
+&nbsp;&nbsp;border: 1px solid #ccc;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;line-height: 100px;
+&nbsp;&nbsp;font-weight: bold;
+}
+<span>
+.card-container {
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;flex-wrap: wrap;
+&nbsp;&nbsp;gap: 20px;
+}</span></code></pre></div>
+                        </div>
+                    </div>
+                    <p>
+                        <span>flex-wrap: wrap;</span>で要素を折り返すことができるようになります。<br>
+                        （拡大などをすることで3つの要素すべてが画面横いっぱいに収まらなくなり、折り返されることが確認できます）<br>
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents6">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                        以下の項目を取り入れて、Lesson6の復習をしましょう
+                        <ul>
+                            <li>要素を3つ横並びにして、間隔をつけて中央揃え</li>
+                            <li>要素を縦方向に並べて、上下中央に配置</li>
+                            <li>画面が狭いときに折り返すレイアウト</li>
+                        </ul>
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents7">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li><span>display: flex;</span>で横並びレイアウトが簡単にできる</li>
+                        <li><span>justify-content</span>や<span>align-items</span>で位置を調整できる</li>
+                        <li><span>gap</span>で要素間のスペースも自由自在</li>
+                        <li><span>flex-wrap</span>を使えばレスポンシブにも対応できる</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページでは、ここまでの総まとめとして<span>実際に1ページを丸ごと作りましょう！</span>
+                    </p>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
@@ -121,8 +329,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
