@@ -399,7 +399,9 @@ footer {
 
   height: 300px;
 }
-
+code {
+    white-space: pre-line;
+}
 /*
 #property {
   border-bottom: 2px solid #000;

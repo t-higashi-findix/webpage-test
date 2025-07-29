@@ -72,9 +72,8 @@
             <li><a href="#scroll-contents2"> 全ての要素は「ボックス」</a></li>
             <li><a href="#scroll-contents3"> レイアウトを整えるCSSプロパティ</a></li>
             <li><a href="#scroll-contents4"> 実例：ボックスの見た目を調整</a></li>
-            <li><a href="#scroll-contents5"> 要素を横に並べるには？</a></li>
-            <li><a href="#scroll-contents6"> 練習課題</a></li>
-            <li><a href="#scroll-contents7"> まとめ</a></li>
+            <li><a href="#scroll-contents5"> 練習課題</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
@@ -84,8 +83,8 @@
                 <div class="contents-exam">
                     <p>
                         前回のレッスンでは、文字に色やサイズなどのスタイルを加えてページにデザインをつける方法を学びました。<br>
-                        今回のテーマは、**要素の配置や並び方を整える「レイアウト」**です。<br>
-                        CSSでは、ページ内の各要素を「ボックス」として捉えて、<br>
+                        今回のテーマは、<span>要素の配置や並び方を整える<b>「レイアウト」</b></span>です。<br>
+                        CSSでは、ページ内の各要素を<span><u>「ボックス」</u></span>として捉えて、<br>
                         そのサイズ・位置・余白などを調整することで、見やすいページ構成を作っていきます。<br>
                         <br>
                     </p>
@@ -94,12 +93,16 @@
             <li id="scroll-contents2">すべての要素は「ボックス」</li>
                 <div class="contents-exam">
                     <p>
-                        HTMLの要素は、**見えない“箱（ボックス）”**に包まれています。<br>
-                        これを<spna>「ボックスモデル」</spna>と呼びます。
+                        HTMLの要素は、<u>見えない<span><b>“箱（ボックス）”</b></span></u>に包まれています。<br>
+                        これを<span>「ボックスモデル」</span>と呼びます。
                     </p>
                     <img src="./1.png" alt="プロゲートの画像" id="progate-pic">
                     <p>
                         引用：<a href="https://prog-8.com/">Progate(https://prog-8.com/)</a>
+                        <br>
+                        <br>
+                        HTMLのすべての要素には枠線<span>(border)</span>があり、その外側の余白<span>(margin)</span>と内側の余白<span>(padding)</span>があります。<br>
+                        要素の位置などを微調整する際にはどちらを調節するのが適切か見分けられるようになるとcssの記述がやりやすくなります。<br>
                     </p>
                 </div>
             <br>
@@ -119,7 +122,12 @@
                         <tr><th><span>margin    </span></th> <th>外側の余白                    </th> <th><span>margin: 10px;</span></th></tr>
                         <tr><th><span>border    </span></th> <th>枠線                         </th> <th><span>border: 1px solid #ccc;</span></th></tr>
                         <tr><th><span>display   </span></th> <th>表示形式（block, inlineなど） </th> <th><span>display: block;</span></th></tr>
-                        <tr><th><span>box-sizing</span></th> <th>枠線やパディングの計算方法     </th> <th><span>box-sizing: border-box</span></th></tr>                        
+                        <tr><th><span>box-sizing</span></th> <th>枠線やパディングの計算方法     </th> <th><span>box-sizing: border-box</span></th></tr>
+                        <tr><th><span>color     </span></th> <th>文字の色を指定                </th> <th><span>color: blue;</span></th></tr>
+                        <tr><th><span>font-size </span></th> <th>文字の大きさを指定             </th> <th><span>font-size: 24px;</span></th></tr>
+                        <tr><th><span>font-family</span></th><th>フォントの種類を指定           </th> <th><span>font-family: sans-serif;</span></th></tr>
+                        <tr><th><span>font-weight</span></th><th>太字などの強調（boldなど）     </th> <th><span>font-weight: bold;</span></th></tr>
+                        <tr><th><span>text-align</span></th> <th>文字の配置（left,centerなど）  </th> <th><span>text-align: center;</span></th></tr>
                     </table>
                 </div>
             <br>
@@ -135,72 +143,41 @@
                                 <button class="tab-btn" data-target="css"> style.css </button>
                             </div>
                             <div class="code-preview-content">
-                                <div class="code-area html-code active">
-<pre><code>
-&lt;!DOCTYPE html&gt;
+                                <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;title&gt;box model&lt;/title&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
+&nbsp;&nbsp;&lt;title&gt;box model&lt;/title&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div class="box"&gt;ここはボックスです&lt;/div&gt;
+&nbsp;&nbsp;&lt;div class="box"&gt;ここはボックスです&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-                                </div>
-                                <div class="code-area css-code">
-<pre><code>
-.box {
-  width: 300px;
-  padding: 20px;
-  margin: 20px auto;
-  border: 2px solid #2a7ae2;
-  background-color: #f0f8ff;
-  text-align: center;
-  box-sizing: border-box;
-}
-</code></pre>
-                                </div>
+&lt;/html&gt;</code></pre></div>
+                                <div class="code-area css-code" id="code-block4"><pre><code>.box {
+&nbsp;&nbsp;width: 300px;
+&nbsp;&nbsp;padding: 20px;
+&nbsp;&nbsp;margin: 20px auto;
+&nbsp;&nbsp;border: 2px solid #2a7ae2;
+&nbsp;&nbsp;background-color: #f0f8ff;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;box-sizing: border-box;
+}</code></pre></div>
                                 <div class="result-block">
                                     <img src="./2.png" class="win-trim">
                                 </div>
                             </div>
                         </div>
+                        <p>
+                            cssファイルの<span>.box</span>の中の見た目やレイアウトを調整する部分で特に分かりやすい場所は、<span>margin: 20px auto;</span><br>
+                            の部分でしょうか。<br>
+                            この部分では要素の外側の余白を調節しますが、上記のような書き方をすると、<span>親要素の中央に配置することができます。</span><br>
+                            デフォルトでは左寄せになっている要素を中央ぞろえにするために私はよくこの書き方をします。<br>
+                            <br>
+                        </p>
                     </div>
+
             <br>
-            <li id="scroll-contents5">要素を横に並べるには？</li>
-                <div class="contents-exam">
-                    <p>
-                       よく使うCSSのプロパティをいくつかご紹介します↓
-                    </p>
-                    <table border="2" class="test-table">
-                        <caption></caption>
-                        <div id="property">
-                        <tr>
-                            <th>    プロパティ   </th>   <th>   説明    </th>   <th>    例  </th>
-                        </tr>
-                        </div>
-                        <tr>
-                            <th>    <span>color</span>   </th>   <th>   文字の色を指定    </th>   <th>    <span>coler: blue;</span>  </th>
-                        </tr>
-                        <tr>
-                            <th>    <span>font-size</span>   </th>   <th>   文字の大きさを指定    </th>   <th>    <span>font-size: 24px;</span>  </th>
-                        </tr>
-                        <tr>
-                            <th>    <span>font-family</span>   </th>   <th>   フォントの種類を指定    </th>   <th>    <span>font-family: sans-serif;</span>  </th>
-                        </tr>
-                        <tr>
-                            <th>    <span>font-weight</span>   </th>   <th>   太字などの強調（boldなど）    </th>   <th>    <span>font-weight: bold;</span>  </th>
-                        </tr>
-                        <tr>
-                            <th>    <span>text-align</span>   </th>   <th>   文字の配置（left,centerなど）    </th>   <th>    <span>text-align: center;</span>  </th>
-                        </tr>
-                        
-                    </table>
-                </div>
-            <br>
-            <li id="scroll-contents6">練習課題</li>
+            <li id="scroll-contents5">練習課題</li>
                 <div class="contents-exam">
                     <p>
                        以下の項目に取り組み、Lesson4の復習をしてみましょう<br>
@@ -213,7 +190,7 @@
                 </div>
             <br>
 
-            <li id="scroll-contents7">まとめ</li>
+            <li id="scroll-contents6">まとめ</li>
                 <div class="contents-exam">
                     <p>
                         今回のまとめです↓<br>
@@ -222,7 +199,6 @@
                         <li>HTML要素は「見えない箱（ボックス）」で構成されている</li>
                         <li>ボックスモデルの構造<span>（margin, padding, border, content）</span>を理解しよう</li>
                         <li><span>width, height, padding, margin, border</span>で大きさや位置を調整できる</li>
-                        <li>要素を横並びにするには<span>float</span>や<span>flexbox</span>を使う</li>
                     </ul>
                     <br>
                     <p>
