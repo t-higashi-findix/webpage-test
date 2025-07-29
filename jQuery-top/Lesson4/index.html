@@ -7,6 +7,7 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -66,48 +67,517 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> jQueryで簡単にアニメーション！</a></li>
+            <li><a href="#scroll-contents2"> 作るもの：3種類のアニメーション</a></li>
+            <li><a href="#scroll-contents3"> スライドで開閉するボックス</a></li>
+            <li><a href="#scroll-contents4"> トップに戻るボタン</a></li>
+            <li><a href="#scroll-contents5"> スクロールしたらフェードイン</a></li>
+            <li><a href="#scroll-contents6"> そもそもなぜjQuery？</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">jQueryで簡単にアニメーション！</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQuaryでは、ほんの数行のコードで要素にアニメーションを加えることができます<br>
+                        以下のようなことが可能です↓
+                        <ul>
+                            <li>スライドで表示・非表示</li>
+                            <li>フェードイン・フェードアウト</li>
+                            <li>自由なアニメーション（位置・サイズ・不透明度など）</li>
+                        </ul>
+                        （他にも様々なことが可能です！）
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">作るもの：3種類のアニメーション</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        今回のレッスンでは次の３つのアニメーションを実装します！
+                        <ol>
+                            <li>スライドで開閉するボックス</li>
+                            <li>トップに戻るボタン</li>
+                            <li>スクロールしたらフェードイン</li>
+                        </ol>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">スライドで開閉するボックス</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        スライドで開閉するボックスとは本ページの上部にあるヘッダーの以下のようなアニメーションを指しています。↓<br>
                     </p>
-                    <!---->
+                    <div class="result-block">
+                        <video src="slide-open-box.mp4" alt="プレビュー画像" class="win-trim" controls autoplay loop>
+                    </div>
+                    <p>
+                        ↑階層構造のWebページなどにこの方法は有効と思われます！
+                    </p>
+                    <h3>実装方法</h3>
+                    <ol>
+                        <li>親要素の作成</li>
+                        <p>
+                            まずは要素がまとまったボックスを作成しましょう！<br>
+                            具体的には上の動画の「トップメニュー」や「HTML&CSS」にあたる部分を作ります。<br>
+                            以下のようなコードで早速要素を作成しましょう！
+                        </p>
+
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active"><pre><code>&lt;body&gt;
+&nbsp;&nbsp;&lt;div class="box-wrapper"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;親要素
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;</code></pre></div>
+                                <div class="code-area css-code" id="code-block4"><pre><code>.box-wrapper {
+&nbsp;&nbsp;background-color: blueviolet;
+&nbsp;&nbsp;color:chartreuse;
+&nbsp;&nbsp;text-align: center; /*テキストを中央揃え*/
+&nbsp;&nbsp;width: 30%;
+&nbsp;&nbsp;margin: 0 auto; /*要素を中央に配置*/
+}</code></pre></div>
+                                <div class="result-block">
+                                    <img src="./box-pic1.png" alt="プレビュー画像" class="win-trim">
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            ↑htmlファイルは&lt;html&gt;タグや&lt;head&gt;タグなどを省略して&lt;body&gt;タグの中身のみ記載しています。可視性の向上が目的です。<br>
+                            色付けはcssファイルをお好みで弄ってください。<br>
+                        </p>
+
+                        <li>子要素の作成</li>
+                        <p>
+                            次にボックスの中身（スライド開閉の部分）を作成しましょう。<br>
+                            具体的な作り方として、box-wrapperクラスを持つ四角形を親要素として、その下に子要素を追加するイメージです。<br>
+                            <br>
+                            では、以下のようにコードを追加しましょう↓<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active"><pre><code>&lt;body&gt;
+&nbsp;&nbsp;&lt;div class="box-wrapper"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;親要素
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="box-child"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span>
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;</code></pre></div>
+                                <div class="code-area css-code" id="code-block4"><pre><code>.box-wrapper {
+&nbsp;&nbsp;background-color: blueviolet;
+&nbsp;&nbsp;color:chartreuse;
+&nbsp;&nbsp;text-align: center; /*テキストを中央揃え*/
+&nbsp;&nbsp;width: 30%;
+&nbsp;&nbsp;margin: 0 auto; /*要素を中央に配置*/
+}
+<span>.box-child { /*li要素の点「・」を消す*/
+&nbsp;&nbsp;list-style: none;
+&nbsp;&nbsp;padding-left: 0;
+&nbsp;&nbsp;margin-left: 0;
+}</span></code></pre></div>
+                                <div class="result-block">
+                                    <img src="./box-pic2.png" alt="プレビュー画像" class="win-trim">
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            子要素1,2,3が下に並びましたね。ただ、このままでは表示されっぱなしなので、子要素を非表示にしましょう。<br>
+                        </p>
+                        <li>子要素の非表示</li>
+                        <p>
+                            次に表示されている子要素を隠します。 隠し方は非常に簡単です。<br>
+                            <span>display: none;</span>を子要素に追加するだけです。 早速追加してみましょう↓<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active"><pre><code>&lt;body&gt;
+&nbsp;&nbsp;&lt;div class="box-wrapper"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;親要素
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="box-child"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>子要素3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;</code></pre></div>
+                                <div class="code-area css-code" id="code-block4"><pre><code>.box-wrapper {
+&nbsp;&nbsp;background-color: blueviolet;
+&nbsp;&nbsp;color:chartreuse;
+&nbsp;&nbsp;text-align: center; /*テキストを中央揃え*/
+&nbsp;&nbsp;width: 30%;
+&nbsp;&nbsp;margin: 0 auto; /*要素を中央に配置*/
+}
+.box-child { /*li要素の点「・」を消す*/
+&nbsp;&nbsp;list-style: none;
+&nbsp;&nbsp;padding-left: 0;
+&nbsp;&nbsp;margin-left: 0;
+<span>&nbsp;&nbsp;display: none;        //子要素を非表示にする</span>
+}</code></pre></div>
+                                <div class="result-block">
+                                    <img src="./box-pic1.png" alt="プレビュー画像" class="win-trim">
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            ※htmlはそのまま<br>
+                            <br>
+                            子要素が隠れましたね。<br>
+                            さて、ここからが本番です。jQueryを記述していきましょう。<br>
+                        </p>
+                        <li>アニメーションの実装（スライドで開閉するボックス）</li>
+                        <p>
+                            最後に<span>マウスが乗ったり/離れたりしたらボックスを表示/非表示</span>できるようにしましょう。<br>
+                            マウスが乗った時/離れた時に動作するイベントは<span>hover</span>や、<span>mouseenter</span>と<span>mouseleave</span>でしたよね➡<a href="../Lesson2/index.html">Lesson2</a><br>
+                            今回は<span>hover</span>を用いて実装してみましょう！<br>
+                            今回のように<span>hover</span>を使う時は親要素のbox-wrapperを指定します。<br>
+                            <br>
+                            では、jsファイルを作成して次のように記述しましょう。↓<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="js"> script.js </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area js-code active" id="code-block4"><pre><code>$(document).ready(function() {
+&nbsp;&nbsp;$('.box-wrapper')<span>.hover</span>(
+&nbsp;&nbsp;&nbsp;&nbsp;function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).find('.box-child').slideDown(200);
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).find('.box-child').slideUp(200);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;);
+});</code></pre></div>
+                                <div class="result-block">
+                                    <video src="./slide-open-box1.mp4" alt="プレビュー画像" class="win-trim" controls autoplay loop>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            <span>$(this)</span>は選択した要素の子要素を取得するために記述しています。<br>
+                            また、<span>.find('.box-child')</span>で子要素の取得を実際に行って、<span>.slide○○</span>でスライドアップとスライドダウンを行っています。<br>
+                            これでスライドで開閉するボックスが完成です！
+                        </p>
+                    </ol>
+                </div>
+            <li id="scroll-contents4">トップに戻るボタン</li>
+                <div class="contents-exam">
+                    <p>
+                        トップに戻るボタンとは本ページの右下に出てくる、押したらページの最上部に移動するようなアニメーションを指しています。↓<br>
+                    </p>
+                    <div class="result-block">
+                        <video src="top-scroll.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                    </div>
+                    <p>
+                        ↑長いWebページであればこの機能が役に立つ...かも？
+                    </p>
+                    <h3>実装方法</h3>
+                    <ol>
+                        <li>ボタンの作成&リンクの紐づけ</li>
+                        <p>
+                            まずはトップに戻るボタンを作成しましょう！<br>
+                            具体的には上の動画の「Return to Top」にあたる部分を作ります。<br>
+                            しかし、単にボタンを作成しただけでは機能を持ちません。 なのでaタグを使ってページトップへのリンクを作成します。<br>
+                            また、トップに戻れるだけのページの長さも必要です。<br>
+                            これらを踏まえて、以下のようなコードで要素を作成しましょう！
+                        </p>
+
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active" id="code-block4"><pre><code>&lt;body&gt;
+&nbsp;&nbsp;&lt;p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;text&lt;br&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;(↑を好きなだけ繰り返す)
+&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&lt;p id="scroll-Top&gt;&lt;a href="#"&gt;Topへ戻る&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;</code></pre></div>
+                                <div class="code-area css-code"><pre><code>#scroll-Top {
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;
+&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid blue;
+&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 20px;
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;
+&nbsp;&nbsp;&nbsp;&nbsp;position: fixed;
+&nbsp;&nbsp;&nbsp;&nbsp;bottom: 25px;
+&nbsp;&nbsp;&nbsp;&nbsp;right: 25px;
+}</code></pre></div>
+                                <div class="result-block">
+                                    <video src="./top-scroll2.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            ↑index.htmlの<span>text&lt;br&gt;</span> は、好きなだけ繰り返してページ横のスクロールバーが現れて少し動かせるくらいまで増やしてください。<br>
+                            <br>
+                            <span>a href="#"</span>によって"#"がリンク先となっていますが、<u>"#"のみの記述ではページのトップを指す</u>扱いとなります。<br>
+                            この書き方を応用すると、例えば、<br>
+                            <span>a href="#example1"</span>と設定するとページ内要素の<span>id="example1"</span>と指定した箇所にページの移動ができます。<br>
+                            このような書き方を<span>ページ内リンク</span>と呼びます。<br>
+                            <br>
+                            トップに戻るという機能をボタンに付与できたので、もう既にトップに戻るボタンは完成しています。<br>
+                            しかし、このままではボタンを押したら一瞬でページが移動するので目が疲れますよね。<br>
+                            <br>
+                            という事でjQueryを使って、ページの移動を目が追える速さにしましょう。<br>
+                        </p>
+
+                        <li>animateメソッドを使ったアニメーションの制御</li>
+                        <p>
+                            ページの移動をゆっくりにしましょう。<br>
+                            以下のようにjsファイルを作成しましょう↓<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="js"> script.js </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area js-code active"><pre><code>$(document).ready(function() {
+&nbsp;&nbsp;$('#scroll-Top').click(function () {
+&nbsp;&nbsp;&nbsp;&nbsp;$('body,html')<span>.animate</span>({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return-Top: 0
+&nbsp;&nbsp;&nbsp;&nbsp;},500);
+&nbsp;&nbsp;});
+});</code></pre></div>
+                                <div class="result-block">
+                                    <video src="./top-scroll1.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            ※htmlとcssはそのまま<br>
+                            <br>
+                            見覚えのないメソッドが現れましたね。<br>
+                            今回使用したメソッドは<span>animate</span>メソッドになります
+                            <span>animate</span>メソッドは使いこなせればページが一層華やかになります<br>
+                            使い方を学びましょう<br>
+                            <h3>animateメソッドとは</h3>
+                            <p>
+                                animateメソッドとはその名の通りアニメーションを実装するためのメソッドです。<br>
+                                animateメソッドでは、オブジェクトの移動や透過率などを変更できます。<br>
+                                アニメーションを実装するためのメソッドは何個か存在しますが、簡単なアニメーションの場合、animateメソッドが一番使用されています。
+                            </p>
+                            <h3>animateメソッドの書き方</h3>
+                            <h4>基本のコード</h4>
+                            <p>
+                                基本のコードとしては、以下のように動かす要素名に対してparamsプロパティで指定したアニメーションを適用します。<br>
+                                <span>[duration]</span>, <span>[easing]</span>, <span>[complete]</span>は省略可能です。
+                                <div class="code-oneline"><code>$('動かす要素名').animate(params, [duration], [easing], [complete])</code></div>
+                            </p>
+                            <h4>使用例</h4>
+                            <p>
+                                <div class="code-block" id="code-block5"><pre><code>$(function() {
+&nbsp;&nbsp;$('動かす要素名').animate({
+&nbsp;&nbsp;&nbsp;&nbsp;'動かすアニメーション名': '動かす距離'
+&nbsp;&nbsp;});
+});</code></pre></div>
+                                <br>
+                                動かす要素名はclassやidで指定します。<br>
+                                また、動かすアニメーション名はopacity(透明度)や、marginLeft（右に動かす）などの指定が可能で、動かす距離は100pxのように指定可能です。
+                            </p>
+                            <h4>animateメソッドのプロパティ例</h4>
+                            <p>
+                                animateメソッドでアニメーションに利用できるプロパティは、以下の4つです。
+                                <ol>
+                                    <li><code>params</code></li>
+                                    <li><code>duration</code></li>
+                                    <li><code>easing</code></li>
+                                    <li><code>complete</code></li>
+                                </ol>
+                                これらの役割と利用例を解説します。
+                            </p>
+                            <ol>
+                                <li><code>params</code></li>
+                                    必須プロパティ。最終的に変化させるCSSのキーと値のマップ値を指定。基本的に数値で表せるもの。<br>
+                                    以下のようなものがある。<br>
+                                    <code>width（幅）</code>,
+                                    <code>height（高さ）</code>,
+                                    <code>top（上）</code>,
+                                    <code>left（左）</code>,
+                                    <code>right（右）</code>,
+                                    <code>bottom（下）</code>,
+                                    <code>margin</code>,
+                                    <code>paddng</code>,
+                                    <code>fontSize（フォントサイズ）</code>,
+                                    <code>opacity（透明度）</code><br>
+                                    <br>
+                                    実際の使用例は以下のようになる。<br>
+                                    <div class="code-block" id="code-block6"><pre><code>$('#box').animate({
+&nbsp;&nbsp;'width': "100px",
+});</code></pre></div>
+                                <li><code>duration</code></li>
+                                    省略可能なオプション。一般的には数値を指定する。1000を指定すると、1秒のアニメーションを行う。<br>
+                                    何も指定しないとnormalという指定になる。normal以外にもslowやfastという指定値も可能。<br>
+                                <li><code>easing</code></li>
+                                    省略可能なオプション。値の変化を調節する独自関数を指定できる。swingとlinearという指定値が用意されている。<br>
+                                    swingが初期値。（swingは、始めと終わりは緩やかで途中は速めのアニメーションのこと）<br>
+                                    linearは 、一定スピードのアニメーションのこと。<br>
+                                <li><code>complete</code></li>
+                                    省略可能なオプション。アニメーション終了時に実行する処理を指定できる。<br>
+                            </ol><br>
+                            <br>
+
+                            引用：<a href="https://magazine.techacademy.jp/magazine/9451" target="_blank">TechAcademyマガジン</a>
+                        </p>
+                    </ol>
+                </div>
+            <br>
+            <li id="scroll-contents5">スクロールしたらフェードイン</li>
+                <div class="contents-exam">
+                    <p>
+                        スクロールしたらフェードインとは、本ページの右下の「Return to Top」がページをスクロールしたらフェードインするようなアニメーションを指しています。↓<br>
+                    </p>
+                    <div class="result-block">
+                        <video src="fadeIn-scroll.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                    </div>
+                    <br>
+                    <p>
+                        会社のHPなども「スクロールしたら○○」といったアニメーションを使っていますね。↓<br>
+                        この場合は「スクロールしたらフェードイン（左の要素から順に）」でしょうか<br>
+                    </p>
+                    <div class="result-block">
+                        <video src="fadeIn-scroll1.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                    </div>
+                    <p>
+                        これらのようなアニメーションの作り方は、私の場合はスクロールの量によって制御しています。<br>
+                        参考資料➡ <a href="https://www.sejuku.net/blog/61689" target="_blank">【jQuery入門】scrollTop()で画面のスクロール位置を取得・設定する方法！（侍エンジニア）</a><br>
+                        <br>
+                        スクロールに関したメソッドに<span>scrollTop()</span>があります。<br>
+                        <span>scrollTop()</span>は画面をスクロールしたときの位置（スクロール量）を取得できるメソッドとなります。<br>
+                        これにより、スクロールに対応して画面上部に戻るボタンを作成することができます。<br>
+                        これを応用できれば以下のようなアニメーションも考えられるようになり、おしゃれなページが出来上がりますね。<br>
+                    </p>
+                    <div class="flex">
+                        <div class="result-block">
+                            <img src="pic1 (1).png" alt="プレビュー動画" class="win-trim">
+                        </div>
+                        <div class="result-block">
+                            <img src="pic1 (2).png" alt="プレビュー動画" class="win-trim">
+                        </div>
+                    </div>
+                    <p>
+                        では<span>scrollTop()</span>を使ったフェードインを4で作ったトップに戻るボタンを使って作ってみましょう<br>
+                    </p>
+                    <h3>実装方法</h3>
+                    <ol>
+                        <li>初期状態の作成</li>
+                        <p>
+                            ボタンははじめは見えない状態でなければなりません。<br>
+                            そのため次のようなコードで、ボタンを見えなくしましょう<br>
+                            実装はとても簡単で<span>display: none;</span>をcssに書き足すだけです。<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area css-code active"><pre><code>#scroll-Top {
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;
+&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid blue;
+&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 20px;
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;
+&nbsp;&nbsp;&nbsp;&nbsp;position: fixed;
+&nbsp;&nbsp;&nbsp;&nbsp;bottom: 25px;
+&nbsp;&nbsp;&nbsp;&nbsp;right: 25px;
+&nbsp;&nbsp;&nbsp;&nbsp;<span>display: none;</span>
+}</code></pre></div>
+                                <div class="result-block">
+                                    <img src="img1.png" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            右下の常に見えていたボタンが見えなくなりましたね。<span>display: none;</span>は<u>指定した要素を完全になくしている</u>と同じ状態です。<br>
+                            簡略なサイト設計でなければさほど困りませんが、<span>display: none;</span>では<u>次の要素でその場所が埋められる</u>という事を頭の片隅に入れておいてください<br>
+                        </p>
+                        <li>jQueryの作成</li>
+                        <p>
+                            お待たせしました。それではjQueryを作ってボタンをフェードインさせてみましょう！<br>
+                            以下のコードをjsファイルに追加しましょう<br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="js"> script.js </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area js-code active" id="code-block4"><pre><code>$(document).ready(function() {
+&nbsp;&nbsp;$('#scroll-Top').click(function () {
+&nbsp;&nbsp;&nbsp;&nbsp;$('body,html').animate({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return-Top: 0
+&nbsp;&nbsp;&nbsp;&nbsp;},500);
+&nbsp;&nbsp;});
+<span>
+&nbsp;&nbsp;$(window).scroll(function() {
+&nbsp;&nbsp;&nbsp;&nbsp;if ($(this).scrollTop() > 50) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#scroll-Top').fadeIn();  // ボタンをフェードインさせる
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#scroll-Top').fadeOut();  // ボタンをフェードアウトさせる
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;});</span>
+});</code></pre></div>
+                                <div class="result-block">
+                                    <video src="fadeIn-scroll2.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            一般的にスクロール位置を取得するには、画面が上下に移動するスクロール量を連続的に知る必要があります。<br>
+                            このようなケースで便利なのが「<span>scroll()</span>」イベントです。これらを組み合わせて、画面のスクロール位置を取得します！<br>
+                            <br>
+                            画面のスクロール位置を知りたいので対象の要素は「<span>window</span>」となります。 画面の全体を見ているといったイメージですね。<br>
+                            そして、「<span>scroll()</span>」イベント処理内でscrollTop()を実行することで、画面が上下に移動する度に画面の最上部からのスクロール位置を取得できるということです<br>
+                            スクロールによるイベントを複数個発生させたいときは「<span>scroll()</span>」イベント内で複数個の処理を書くようにしましょう。<br>
+                            <br>
+                            次に、先ほどから度々出てきている「<span>$(this)</span>」について。<br>
+                            簡潔に述べると、thisとは「データ取得専用の変数」だそうです。<br>
+                            この書きかたは複数の要素が同じ扱いとならないように<b><u>"処理の切り分け"</u></b>ができるそうです。<br>
+                            詳しいことは下の資料を見てみてください。 少なくとも筆者はそのような認識です。<br>
+                            参考資料➡<a href="https://qiita.com/bakatono_super/items/b23ee7a5053137db967d" target="_blank">【jQuery】$(this)の意味＆使い方について</a><br>
+                            <br>
+                            そして、<span>$(this)</span>の部分は全体で見ると<span>if($(this).scrollTop() > 50)</span>というif文になっていますね。<br>
+                            つまり、先ほどの<span>scrollTop()</span>の説明と併せると、「スクロール位置が50を超えたらフェードインさせる」「そうでなければ（50以下なら）フェードアウトさせる（フェードインした後の処理）」<br>
+                            といった処理が実装できました！<br>
+                            <br>
+                            これでアニメーションの完成です！おつかれさまでした！<br>
+                        </p>
+
+
+                    </ol>
+                </div>
+            <li id="scroll-contents6">そもそもなぜjQuery？</li>
+                <div class="contents-exam">
+                    <p>
+                        ここまでjQueryというJavaScriptのライブラリを使ってアニメーションやボタンを押したときの挙動などを実装してきましたね。<br>
+                        <br>
+                        ところでなぜjQueryを使っているのでしょう。<br>
+                        先に前提を述べておくとJavaScriptでも同じような動きや挙動、アニメーションなどを実装することは可能のはずです。（筆者はJavaScriptを書いたことがないのでわかりませんが）<br>
+                        以前述べたようにJavaScriptとjQueryを比較したときにjQueryはJavaScriptより「簡単に、短く書ける」といったメリットがありましたよね。→<a href="../Lesson1/index.html#scroll-contents1">Lesson1</a><br>
+                        以前の説明では例に挙げた内容が「要素を隠す」といったものだけだったので、あまり違いやメリットを感じなかったと思います。（どちらも1行で済んでましたからね）<br>
+                        <br>
+                        そこでコード量に着目した資料があるので以下に引用した資料を載せます↓<br>
+                        引用：<a href="https://qiita.com/YJ2222/items/1007368a1764c3345cfc" target="_blank">Javascript、JQueryコード比較。</a><br>
+                        <br>
+                        実装したい処理や機能が複雑になればなるほどコード量が増えていきます。<br>
+                        コード量の削減ができるjQueryの恩恵を受けられるように感じ始めるのは、十分に慣れた後なのかもしれませんね。<br>
+                        <br>
+                    </p>
                 </div>
         </ol>
         <br>
@@ -121,8 +591,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもjQueryを始めてみましょう！</h2>
+          <h3>Let's learn to jQuery, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
@@ -131,7 +601,7 @@
 
 </main>
 
-<p id="scrollTop"><a href="#">Return to Top</a></p>
+<a href="#"><p id="return-Top">Return to Top</p></a>
 
 <footer>        <!--フッターの部分-->
     <div class="container">
