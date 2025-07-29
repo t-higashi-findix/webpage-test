@@ -7,6 +7,7 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -39,7 +40,7 @@
             </div>
         
             <div class="tab-jQuery">
-                <span><a href="../index.html" id="jQuery">jQuary</a></span>
+                <span><a href="../index.html" id="jQuery">jQuery</a></span>
                 
                 <ul class="none-jQuery">
                     <li><a href="./index.html">Lesson 1：jQueryって何？導入と基本文法</a></li>
@@ -66,49 +67,209 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> jQueryとは？</a></li>
+            <li><a href="#scroll-contents2"> jQueryを使う準備</a></li>
+            <li><a href="#scroll-contents3"> jQueryの基本文法</a></li>
+            <li><a href="#scroll-contents4"> 簡単な操作例：文字の変更</a></li>
+            <li><a href="#scroll-contents5"> よく使うメソッド（入門編）</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+
+            <li id="scroll-contents1">jQueryとは？</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryは、<span><u>JavaScriptをより簡単に・短く書くための軽量なJavaScriptライブラリ</u></span>です。<br>
+                        複雑なイベント処理やアニメーションなどを、わずかなコードで実現できます。<br>
+                       <br>
+                       例えば...
                     </p>
-                    <!---->
+                    <button class="btn-non-func"> sample.js </button>
+                    <div class="code-block"><pre><code><span style="color: green">// JavaScript         （JavaScriptは「//」でコメントアウトできる）</span>
+document.getElementById('box').style.display = 'none';
+
+<span style="color: green">// jQuery</span>
+$('#box').hide();</code></pre></div>
+                    <p>
+                        これはどちらも同じ、<span>「"box"要素を隠す」</span>といった内容になりますが、 
+                        jQueryが明らかにJavaScriptよりも少ないことが分かります。<br>
+                        jQueryはこの分かりやすさとコードの簡潔さが魅力です。
+                    </p>
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">jQueryを使う準備</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryを使うためにはjQueryのライブラリをHTMLファイルに読み込む必要があります。（左のコード）<br>
+                        HTMLファイルにjQuery(javascriptファイル)を読み込むには以下のコードのように&lt;script&gt;タグを用いて、&lt;head&gt;要素内、または&lt;body&gt;の末尾に記述します。<br>
                     </p>
-                    <!---->
+                    <div class="code-preview-content">
+                        <div class="code-block" id="code-block4"><pre><code>&lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;</code></pre></div>
+                        <div class="code-block" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;jQueryの導入&lt;/title&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello jQuery!&lt;/h1&gt;
+
+    &lt;script&gt;
+    <span>$(document).ready(function() {
+        // jQueryの処理を書く場所
+        console.log("jQueryが読み込まれました！");
+    });</span>
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                    </div>
+                    <p>
+                        右のコードのようにhtmlファイル内にすべてのjQueryのコードを組み込む方法もありますね。<br>
+                        アニメーションをあまり使わないWebページであれば十分に書き込める内容と記述量ですね。<br>
+                        記述量が多い場合などはjsファイルをscriptタグで読み込む方法もあります。
+                    </p>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">jQueryの基本文法</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        jQueryを使う準備ができたので早速jQueryを使ってみましょう！<br>
+                        ここではまずjQueryを使うには欠かせない<span><b>$()</b></span>と、よく使うセレクタの例について示します。<br>
                     </p>
-                    <!---->
+
+                    <ol>
+                        <h3>$()の使い方</h3>
+                        <div class="code-block"><pre><code>$(セレクタ).メソッド();</code></pre></div>
+                        <ul>
+                            <li>$：jQueryオブジェクトの基本記号</li>
+                            <li>セレクタ：操作したいHTML要素（CSSと同じ記述方法）</li>
+                            <li>メソッド：操作内容（例：<span>hide()</span>,<span>hover()</span>,<span>click()</span>など）</li>
+                        </ul>
+                    </ol>
                 </div>
+            <br>
+            <li id="scroll-contents4">簡単な操作例：文字の変更</li>
+                <div class="contents-exam">
+                    <p>
+                        簡単な操作例として文字の変更をしてみましょう。<br>
+                        以下のコードを作成して実行してみましょう。
+                    </p>
+                    <div class="code-preview-wrapper">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="html"> index.html </button>
+                            <button class="tab-btn" data-target="css"> style.css </button>
+                            <button class="tab-btn" data-target="js"> script.js </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Lesson 1&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;はじめてのjQuery&lt;/h1&gt;
+    &lt;button id="showBtn"&gt;クリックしてメッセージを表示&lt;/button&gt;
+    &lt;p id="message"&gt;こんにちは、jQueryの世界へようこそ！&lt;/p&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                            <div class="code-area css-code" id="code-block4"><pre><code>#message {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #2a7ae2;
+}</code></pre></div>
+                            <div class="code-area js-code" id="code-block4"><pre><code>$(document).ready(function() {
+    $('#showBtn').click(function() {
+        $('#message').fadeIn();
+    });
+});</code></pre></div>
+                            <div class="result-block">
+                                <video src="./1.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        記載したjQueryコード(jsコード)について説明します↓
+                    </p>
+                    <h3>jQueryコードとその意味</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>コード</th> <th>意味</th></tr>
+                        </div>
+                        <tr><th><span>$(document).ready()               </span></th> <th>ページの読み込みが完了したら実行する   </th></tr>
+                        <tr><th><span>$('#showBtn')                       </span></th> <th>idが showBtn の要素を取得            </th></tr>
+                        <tr><th><span>.click(function(){ ... })  </span></th> <th>クリックされたときの処理を書く         </th></tr>
+                        <tr><th><span>$('#message').fadeIn()            </span></th> <th>メッセージをフェードインして表示       </th></tr>
+                    </table>
+                </div>
+            <br>
+            <li id="scroll-contents5">よく使うメソッド（入門編）</li>
+                <div class="contents-exam">
+                    <p>
+                        以下にjQueryでよく使われる記述例について示します。
+                    <h3>jQueryコードの目的と記述例</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>目的</th> <th>記述例</th></tr>
+                        </div>
+                        <tr><th>要素を取得      </th> <th><span>$('#id')</span>, <span>$('.class')</span></th></tr>
+                        <tr><th>クリック時の処理</th> <th><span>.click(function(){ ... })</span></th></tr>
+                        <tr><th>表示/非表示     </th> <th><span>.show()</span>, <span>.hide()</span>, <span>.fadeIn()</span>, <span>.fadeOut()</span></th></tr>
+                        <tr><th>テキストを変える</th> <th><span>.text("新しい文字")</span></th></tr>
+                    </table>
+                        <br>
+                        要素を取得については<span>$('#～')</span>がidの取得で、<span>$('.～')</span>がクラスの取得になります。使い分けましょう。<br>
+                        また、<span>.click(function(){})</span>については<span>.on('click',function(){})</span>などの書き方もあります。<br>
+                        色々調べてみてはいかがでしょうか。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents6">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        jQueryには以下のようなメリットがあります。
+                        <ul>
+                            <li>短いコードで直感的に書ける</li>
+                            <li>初学者にとってはJavaScriptよりも理解しやすい</li>
+                        </ul>
+                        「特にJavaScriptよりも理解しやすい」については筆者がJavaScriptに触れたことがないことも起因しますが、<br>
+                        「セレクタを指定して処理を書くだけ」という考え方がまとまっているので非常に使いやすいく感じました。
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents7">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                        練習問題として以下の機能も追加してみましょう
+                        <ul>
+                            <li>非表示にするボタンを追加し、fadeOut()を使って消す</li>
+                        </ul>
+                    </p>
+                </div>
+            <br>
+            <li id="scroll-contents8">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        まとめです↓
+                    </p>
+                    <ul>
+                        <li>jQueryはJavaScriptを"直感的に簡単に"書けるライブラリ                     </li>
+                        <li><span>$(document).ready()</span>の中に処理を書くのが基本                </li>
+                        <li><span>$('#id')</span>や<span>$('.class')</span>でHTML要素を操作できる   </li>
+                        <li><span>.click()</span>を使ってクリックに反応させる                        </li>
+                    </ul>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
@@ -121,8 +282,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもjQueryを始めてみましょう！</h2>
+          <h3>Let's learn to jQuery, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
