@@ -66,54 +66,221 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> 完成イメージ</a></li>
+            <li><a href="#scroll-contents3"> HTML構造（基本形）</a></li>
+            <li><a href="#scroll-contents4"> CSS(style.css)</a></li>
+            <li><a href="#scroll-contents5"> 要素の補足</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        ここまででHTMLとCSSの基本を一通り学んできました。<br>
+                        今回はいよいよ実践編として、実際にWebページを1枚作ってみるレッスンです！<br>
+
+                        これまで学んだ内容を活かしながら、ヘッダー・本文・フッターのあるシンプルなレイアウトを作成してみましょう。<br>
                     </p>
-                    <!---->
+                    <h3>使用する技術</h3>
+                    <p>
+                        <ul>
+                            <li style="margin: 20px 0%; font-size: 1em">HTML（文書構造）</li>
+                            <li style="margin: 20px 0%; font-size: 1em">CSS（デザインとレイアウト）</li>
+                            <li style="margin: 20px 0%; font-size: 1em">Flexbox（横並び・中央揃え）</li>
+                            <li style="margin: 20px 0%; font-size: 1em">クラス名やCSSセレクタの使い方</li>
+                        </ul>
+                    </p>
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">完成イメージ</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        以下のような1ページ構成のサイトの制作を目指します。<br>
                     </p>
-                    <!---->
+                    <div class="img-pic">
+                        <img src="./1.png">
+                    </div>
+                    <p>
+                        早速作ってみましょう！<br>
+                        以下の項目では回答例を示します。<br>
+                    </p>
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">HTML構造（基本形）</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        以下に今回作成するページのHTML例を示します。
                     </p>
-                    <!---->
+                    <div class="code-block" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;
+&nbsp;&nbsp;&lt;title&gt;My Simple Website&lt;/title&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&nbsp;&nbsp;&lt;header&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="logo"&gt;My Site&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="nav"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;サービス&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;/header&gt;
+
+&nbsp;&nbsp;&lt;section class="hero"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;ようこそ！&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;これはサンプルのWebページです。&lt;/p&gt;
+&nbsp;&nbsp;&lt;/section&gt;
+
+&nbsp;&nbsp;&lt;section class="features"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="feature"&gt;特徴1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="feature"&gt;特徴2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="feature"&gt;特徴3&lt;/div&gt;
+&nbsp;&nbsp;&lt;/section&gt;
+
+&nbsp;&nbsp;&lt;footer&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&copy; 2025 My Site. All rights reserved.&lt;/p&gt;
+&nbsp;&nbsp;&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
                 </div>
+            <br>
+            <li id="scroll-contents4">CSS(style.css)</li>
+                <div class="contents-exam">
+                    <p>
+                        以下に今回作成するページのCSS例を示します。
+                    </p>
+                    <div class="code-block" id="code-block4"><pre><code>body {
+&nbsp;&nbsp;margin: 0;
+&nbsp;&nbsp;font-family: 'Helvetica', sans-serif;
+&nbsp;&nbsp;background: #f9f9f9;
+}
+
+header {
+&nbsp;&nbsp;background: #2a7ae2;
+&nbsp;&nbsp;color: white;
+&nbsp;&nbsp;padding: 20px 0;
+}
+
+.container {
+&nbsp;&nbsp;width: 90%;
+&nbsp;&nbsp;max-width: 1000px;
+&nbsp;&nbsp;margin: 0 auto;
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;justify-content: space-between;
+&nbsp;&nbsp;align-items: center;
+}
+
+.logo {
+&nbsp;&nbsp;font-size: 24px;
+}
+
+.nav ul {
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;list-style: none;
+&nbsp;&nbsp;padding: 0;
+}
+
+.nav li {
+&nbsp;&nbsp;margin-left: 20px;
+}
+
+.nav a {
+&nbsp;&nbsp;color: white;
+&nbsp;&nbsp;text-decoration: none;
+}
+
+.hero {
+&nbsp;&nbsp;background: #e2edff;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;padding: 60px 20px;
+}
+
+.hero h2 {
+&nbsp;&nbsp;font-size: 32px;
+&nbsp;&nbsp;margin-bottom: 10px;
+}
+
+.features {
+&nbsp;&nbsp;display: flex;
+&nbsp;&nbsp;justify-content: space-between;
+&nbsp;&nbsp;gap: 20px;
+&nbsp;&nbsp;padding: 40px 20px;
+&nbsp;&nbsp;max-width: 1000px;
+&nbsp;&nbsp;margin: 0 auto;
+}
+
+.feature {
+&nbsp;&nbsp;flex: 1;
+&nbsp;&nbsp;background: white;
+&nbsp;&nbsp;padding: 20px;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;border: 1px solid #ccc;
+&nbsp;&nbsp;border-radius: 8px;
+}
+
+footer {
+&nbsp;&nbsp;background: #333;
+&nbsp;&nbsp;color: white;
+&nbsp;&nbsp;text-align: center;
+&nbsp;&nbsp;padding: 20px;
+}</code></pre></div>
+                </div>
+            <br>
+            <li id="scroll-contents5">要素の補足</li>
+                <div class="contents-exam">
+                    <p>
+                        以下にサンプルファイルに示した要素などの詳細について示します↓
+                    </p>
+                    <h3>要素：内容</h3>
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>要素</th> <th>内容</th></tr>
+                        </div>
+                        <tr><th><span>.container</span></th> <th>幅を制限した中央揃え用ラッパー（Flexbox使用）  </th></tr>
+                        <tr><th><span>.hero     </span></th> <th>メインビジュアル的なセクション                </th></tr>
+                        <tr><th><span>.features </span></th> <th>Flexboxを使って3つの特徴を横並びに            </th></tr>
+                        <tr><th><span>footer    </span></th> <th>サイトの最下部に固定された簡易的なフッター      </th></tr>
+                    </table>
+                </div>
+            <br>
+            <li id="scroll-contents6">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        これらのWebページを作成した私からのまとめです↓
+                    </p>
+                    <ul>
+                        <li>これまでの内容を活かして1ページのwebサイトが作れた</li>
+                        <li>Flexboxやクラス名、セクションの分け方が重要</li>
+                        <li>実際に何かを作ることで経験と練習を積み重ねましょう</li>
+                    </ul>
+                    <br>
+                    <p>
+                        ここまでHTML&CSSの全7レッスン、おつかれさまでした！<br>
+                        次はJavaScriptのライブラリである<u><b>jQuery</b></u>を使った動きのあるページ作りに取り組んでみましょう！<br>
+                        <br>
+                        次回からは、<u>jQuery Lesson 1「はじめてのjQuery」</u>に進みます。<br>
+                        今回のHTML&CSSで作ったページをさらに豪華にしていきましょう<br>
+                    </p>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
             <p id="Go-back" class="Go-button"><a href="../Lesson6/index.html">Lesson6</a></p>    <!-- ページごとに対応するページを割り当てる -->
-            <p id="Go-forward" class="Go-button"><a href="../index.html">HTML&CSS TOP</a></p> <!-- ページごとに対応するページを割り当てる -->
+            <p id="Go-forward" class="Go-button"><a href="../../jQuery-top/Lesson1/index.html">jQuery Lesson1</a></p> <!-- ページごとに対応するページを割り当てる -->
         </div>
 
     </div>
@@ -121,8 +288,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
