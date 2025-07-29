@@ -7,6 +7,8 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>        <!--ヘッダーの部分-->
@@ -59,56 +61,187 @@
       <div class="container">
         <h1>東のHTML&CSS学習日誌</h1>
         <h2>Lesson 5：ページ構成の設計</h2>
-        <p>ヘッダーやナビ、フッターなど、ページの“型”を知ろう。</p>
+        <p>ヘッダー・フッター・ナビ… Webページの“型”を理解しよう！</p>
         <h5>背景画像  著作者：rawpixel.com/出典：Freepik</h5>
       </div>
     </div>
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> 目次を追加(1)</a></li>
-            <li><a href="#scroll-contents2"> 目次を追加(2)</a></li>
-            <li><a href="#scroll-contents3"> 目次を追加(3)</a></li>
+            <li><a href="#scroll-contents1"> はじめに</a></li>
+            <li><a href="#scroll-contents2"> Webページの一般的な構成</a></li>
+            <li><a href="#scroll-contents3"> 各パーツの役割</a></li>
+            <li><a href="#scroll-contents4"> サンプル：基本的なページ構成</a></li>
+            <li><a href="#scroll-contents5"> 練習課題</a></li>
+            <li><a href="#scroll-contents6"> まとめ</a></li>
         </ol>
 
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">目次を追加(1)</li>
+            <li id="scroll-contents1">はじめに</li>
                 <div class="contents-exam">
                     <p>
-                        1つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        これまでのレッスンで、HTMLタグやCSSを使って見た目を整える方法を学んできました。<br>
+                        今回は、それらをどのように組み合わせて1つのページを構成するか、つまり<span>Webページの設計</span>について学んでいきます。<br>
+                        実際のサイトを見ると、どれも一定の「型」に沿って作られていることがわかるはずです。<br>
+                        <br>
                     </p>
-                    <!---->
                 </div>
             <br>
-            <li id="scroll-contents2">目次を追加(2)</li>
+            <li id="scroll-contents2">Webページの一般的な構成</li>
                 <div class="contents-exam">
                     <p>
-                        2つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                        多くのWebページは、以下のようなブロックで構成されます
                     </p>
-                    <!---->
+                    <img src="./1.png" alt="パワポ画像" id="ppt-pic">
                 </div>
             <br>
-            <li id="scroll-contents3">目次を追加(3)</li>
+            <li id="scroll-contents3">各パーツの役割</li>
                 <div class="contents-exam">
                     <p>
-                        3つ目の段落です
-                        pタグで文章を挿入したり、
-                        <span>spanで赤くしてみたり</span>
-                        いろいろ試せます
-                        imgで写真を挿入できたりもします。
+                       各タグの役割について説明します。
                     </p>
-                    <!---->
+                    <table border="2" class="test-table">
+                        <caption></caption>
+                        <div id="property">
+                        <tr><th>タグ名</th> <th>役割</th></tr>
+                        </div>
+                        <tr><th><span>&lt;header&gt;</span></th> <th>サイトのタイトル、ロゴ、メニューなど       </th></tr>
+                        <tr><th><span>&lt;nav&gt;   </span></th> <th>ページ内や外部へのナビゲーション（リンク）  </th></tr>
+                        <tr><th><span>&lt;main&gt;  </span></th> <th>ページの主なコンテンツ部分                 </th></tr>
+                        <tr><th><span>&lt;footer&gt;</span></th> <th>コピーライト、連絡先などの末尾情報          </th></tr>
+                    </table>
                 </div>
+            <br>
+            <li id="scroll-contents4">サンプル：基本的なページ構成</li>
+                    <div class="contents-exam">
+                        <p>
+                            ページの構成について以下にサンプルコードを示します。<br>
+                            <br>
+                        </p>
+                        <div class="code-preview-wrapper">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-target="html"> index.html </button>
+                                <button class="tab-btn" data-target="css"> style.css </button>
+                            </div>
+                            <div class="code-preview-content">
+                                <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp;&lt;meta charset="utf-8"&gt;
+&nbsp;&lt;title&gt;サンプルページ構成&lt;/title&gt;
+&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp;&lt;header&gt;
+&nbsp;&nbsp;&lt;h1&gt;My Web Site&lt;/h1&gt;
+&nbsp;&lt;/header&gt;
+
+&nbsp;&lt;nav&gt;
+&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;プロフィール&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;お問い合わせ&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&lt;/nav&gt;
+&nbsp;&lt;main&gt;
+&nbsp;&nbsp;&lt;h2&gt;はじめまして&lt;/h2&gt;
+&nbsp;&nbsp;&lt;p&gt;このページはHTMLとCSSの練習用です。&lt;/p&gt;
+&nbsp;&lt;/main&gt;
+&nbsp;&lt;footer&gt;
+&nbsp;&nbsp;&lt;p&gt;&copy; 2025 My Web Site&lt;/p&gt;
+&nbsp;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                                <div class="code-area css-code" id="code-block4"><pre><code>body {
+&nbsp;font-family: sans-serif;
+&nbsp;margin: 0;
+&nbsp;padding: 0;
+}
+
+header, nav, main, footer {
+&nbsp;padding: 20px;
+&nbsp;text-align: center;
+}
+
+header {
+&nbsp;background-color: #2a7ae2;
+&nbsp;color: white;
+}
+
+nav {
+&nbsp;background-color: #e0e0e0;
+}
+
+nav ul {
+&nbsp;list-style: none;
+&nbsp;padding: 0;
+&nbsp;display: flex;
+&nbsp;justify-content: center;
+}
+
+nav li {
+&nbsp;margin: 0 15px;
+}
+
+nav a {
+&nbsp;text-decoration: none;
+&nbsp;color: #333;
+}
+
+main {
+&nbsp;background-color: #f9f9f9;
+&nbsp;min-height: 300px;
+}
+
+footer {
+&nbsp;background-color: #ddd;
+&nbsp;font-size: 0.8em;
+}</code></pre></div>
+                                <div class="result-block">
+                                    <img src="./2.png" class="win-trim">
+                                </div>
+                            </div>
+                        </div>
+                        <h3>ポイント解説</h3>
+                        <ul>
+                            <li><span>header</span>, <span>nav</span>, <span>main</span>, <span>footer</span>はHTML5のセクショナル要素</li>
+                            <li><span>ul</span> と <span>li</span> を使ってナビゲーションのリストを作成</li>
+                            <li>レイアウトは基本的に縦並び（後ほど<span>Flexbox</span>で横並びにも挑戦！）</li>
+                        </ul>
+                    </div>
+            <br>
+            <li id="scroll-contents5">練習課題</li>
+                <div class="contents-exam">
+                    <p>
+                      以下の条件で、あなただけの簡易Webページ構成を完成させてみましょう<br>
+                    </p>
+                    <ul>
+                        <li>ページに <span>header</span>, <span>nav</span>, <span>main</span>, <span>footer</span> を使う</li>
+                        <li>ナビゲーションに3つ以上のリンクを追加する</li>
+                        <li>全体をCSSで見やすく整える</li>
+                    </ul>
+                </div>
+            <br>
+
+            <li id="scroll-contents6">まとめ</li>
+                <div class="contents-exam">
+                    <p>
+                        今回のまとめです↓<br>
+                    </p>
+                    <ul>
+                        <li>Webページには<u>一定の構成パターン（型）</u>がある</li>
+                        <li><span>header</span>, <span>nav</span>, <span>main</span>, <span>footer</span> を使い分けよう</li>
+                        <li>セクションごとに CSS で背景や文字色を変えると見やすくなる</li>
+                        <li><span>ul</span>+<span>li</span>+<span>a</span>でナビゲーションリンクを作成する</li>
+                    </ul>
+                    <br>
+                    <p>
+                        次のページではボックスを横に並べたり中央揃えにしたりといった、自由なレイアウトが可能になる<span>「Flexbox（フレックスボックス）」</span>について学びます！
+                    </p>
+                </div>
+            <br>
         </ol>
         <br>
         <div class="flex">
@@ -121,8 +254,8 @@
     <div class="message-wrapper">
       <div class="container">
         <div class="heading">
-          <h2>さぁ、あなたも○○を始めてみましょう！</h2>
-          <h3>Let's learn to ○○, learn to be creative!</h3>
+          <h2>さぁ、あなたもHTML&CSSを始めてみましょう！</h2>
+          <h3>Let's learn to HTML&CSS, learn to be creative!</h3>
         </div>
         <a href="https://code.visualstudio.com/download" target="_blank" class="btn message">Visual Studio Codeをダウンロード</a>
       </div>
