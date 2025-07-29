@@ -144,7 +144,7 @@ header {
 }
 
 #box {
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
   color: #668ad8;
   border: double 5px #668ad8;/*二重線 太さ 色*/
@@ -199,6 +199,10 @@ header {
   font-size: 1em;
   font-family: "Source Code Pro", sans-seif;
   color: red;
+}
+.contents-exam li {
+  margin: 20px 0%; /* ← 縦に余白 */
+  font-size: 1.3em;
 }
 .flex {         /* 横並びにして左右の端にそれぞれを寄せる */
   display: flex;
@@ -302,9 +306,14 @@ footer {
   color: #333;
   white-space: pre-wrap;
   overflow-x: auto;
+  overflow-y: auto;
   box-sizing: border-box;
-}
 
+  height: 300px;
+}
+#code-block4 {
+  font-size: 12px;
+}
 /* 右側：実行結果など */
 .result-block {
   flex: 1 1 48%;
@@ -327,4 +336,8 @@ footer {
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+code {
+    white-space: pre-line;
 }
