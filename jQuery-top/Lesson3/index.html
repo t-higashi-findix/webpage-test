@@ -67,7 +67,7 @@
     <div class="main-wrapper">
         <ol id="box" class="contents container">
             <h2>目次</h2>
-            <li><a href="#scroll-contents1"> jqueryでできる「要素の操作」とは？</a></li>
+            <li><a href="#scroll-contents1"> jQueryでできる「要素の操作」とは？</a></li>
             <li><a href="#scroll-contents2"> 表示・非表示の基本</a></li>
             <li><a href="#scroll-contents3"> fadeで滑らかに表示・非表示</a></li>
             <li><a href="#scroll-contents4"> クラスの追加・削除・切り替え</a></li>
@@ -78,7 +78,7 @@
         <br>
 
         <ol class="explanation">
-            <li id="scroll-contents1">jqueryでできる「要素の操作」とは？</li>
+            <li id="scroll-contents1">jQueryでできる「要素の操作」とは？</li>
                 <div class="contents-exam">
                     <p>
                         jQueryを使うと、HTMLの要素に対して次のような操作が簡単にできます：
@@ -91,7 +91,7 @@
                     </p>
                 </div>
             <br>
-            <li id="scroll-contents2">表示・非表示の基本)</li>
+            <li id="scroll-contents2">表示・非表示の基本</li>
                 <div class="contents-exam">
                     <p>
                         jQuarynにおける表示・非表示では以下のメソッドを使うことで簡単に実装ができます。<br>
@@ -107,38 +107,51 @@
                         <tr><th><span>.fadeOut()</span></th> <th>要素を非表示にする</th></tr>
                         <tr><th><span>.fadeToggle()</span></th> <th>表示/非表示を切り替える</th></tr>
                     </table>
-                    <div class="code-area">
-<pre><code>
-&lt;p id="fade-text"&gt;ふわっと表示・非表示&lt;/p&gt;
-&lt;button id="fade-btn"&gt;fade切り替え&lt;/button&gt;
-
-&lt;script&gt;
-$(document).ready(function() {
-    $('#fade-btn').click(function() {
-    $('#fade-text').fadeToggle();
-});
-});
-&lt;/script&gt;
-</code></pre>
-                    </div>
-                    <br>
-<div class="code-block"><pre><code>&lt;p id="msg"&gt;こんにちは！&lt;/p&gt;
-&lt;button id="btn"&gt;クリックして変更&lt;/button&gt;
-
-&lt;script&gt;
-&nbsp;$(document).ready(function() {
-&nbsp;&nbsp;$('#btn').click(function() {
-&nbsp;&nbsp;&nbsp;$('#msg').text('こんにちは、jQuery！');
-&nbsp;&nbsp;});
-&nbsp;});
-&lt;/script&gt;</code></pre></div>
                 </div>
             <br>
-            <li id="scroll-contents3">クラスの追加・削除・切り替え</li>
+            <li id="scroll-contents3">fadeで滑らかに表示・非表示</li>
+                <div class="contents-exam">
+                    <div class="code-preview-wrapper">
+                        <p>
+                            toggleClassを使うことで2つの要素を切り替えているように表示することもできます。
+                        </p>
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="html"> index.html </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="fade-text"&gt;ふわっと表示・非表示&lt;/p&gt;
+    &lt;button id="fade-btn"&gt;fade切り替え&lt;/button&gt;
+
+    &lt;script&gt;
+    $(document).ready(function() {
+        $('#fade-btn').click(function() {
+            $('#fade-text').fadeToggle();
+        });
+    });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                            <div class="result-block">
+                                <video src="./1.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <br>
+            <li id="scroll-contents4">クラスの追加・削除・切り替え</li>
                 <div class="contents-exam">
                     <p>
                         jQueryでは見た目にかかわるイベントのみならず、クラスの追加や削除も行うことができます。<br>
-                        以下のにクラスの追加や削除にかかわるメソッドについて簡単に説明します。<br>
+                        ちなみにこのページのヘッダー部分にある各Lessonへ移動できるイベントもこのクラスの追加、削除を行うことで実装しています<br>
+                        <br>
+                        以下にクラスの追加や削除にかかわるメソッドについて簡単に説明します。<br>
                     </p>
                     <h3>クラスの追加・削除・切り替えにかかわるメソッド</h3>
                     <table border="2" class="test-table">
@@ -153,25 +166,44 @@ $(document).ready(function() {
                     
                 </div>
                 <br>
-            <li id="scroll-contents4">応用：2つの要素を切り替える</li>
+            <li id="scroll-contents5">応用：2つの要素を切り替える</li>
                 <div class="contents-exam">
                     <p>
                         toggleClassを使うことで2つの要素を切り替えているように表示することもできます。
                     </p>
-<div class="code-block"><pre><code>&lt;p id="msg1"&gt;こんにちは！&lt;/p&gt;
-&lt;p id="msg2" style="display:none;"&gt;さようなら！&lt;/p&gt;
-&lt;button id="switch-btn"&gt;切り替え&lt;/button&gt;
+                    <div class="code-preview-wrapper">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-target="html"> index.html </button>
+                        </div>
+                        <div class="code-preview-content">
+                            <div class="code-area html-code active" id="code-block4"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="msg1"&gt;こんにちは！&lt;/p&gt;
+    &lt;p id="msg2" style="display:none;"&gt;さようなら！&lt;/p&gt;
+    &lt;button id="switch-btn"&gt;切り替え&lt;/button&gt;
 
-&lt;script&gt;
-&nbsp;$(document).ready(function() {
-&nbsp;&nbsp;$('#switch-btn').click(function() {
-&nbsp;&nbsp;&nbsp;$('#msg1').toggle();
-&nbsp;&nbsp;&nbsp;$('#msg2').toggle();
-&nbsp;&nbsp;});
-&nbsp;});
-&lt;/script&gt;</code></pre></div>
+    &lt;script&gt;
+    $(document).ready(function() {
+        $('#switch-btn').click(function() {
+            $('#msg1').toggle();
+            $('#msg2').toggle();
+        });
+    });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+                            <div class="result-block">
+                                <video src="./1.mp4" alt="プレビュー動画" class="win-trim" controls autoplay loop>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <li id="scroll-contents5">まとめ</li>
+            <li id="scroll-contents6">まとめ</li>
                 <div class="contents-exam">
                     <p>
                         まとめです↓
